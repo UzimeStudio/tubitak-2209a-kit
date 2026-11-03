@@ -1,0 +1,34 @@
+{
+  "_note": "Bu dosyayı project.json olarak kopyalayın veya `uv run python tools/init_project.py` ile oluşturun. Bilinmeyen değere TBD yazın; uydurmayın.",
+  "project": {
+    "title": "TBD",
+    "short_name": "",
+    "keywords": [],
+    "scientific_field": "TBD",
+    "priority_area": null,
+    "project_type": "software | experiment | field-study | survey | data-analysis | design | other"
+  },
+  "team": {
+    "lead": { "name": "TBD", "department": "", "year": "" },
+    "members": [],
+    "advisor": { "name": "TBD", "title": "", "institution": "" }
+  },
+  "call": { "rules_file": "2209a-2026.json" },
+  "timeline": { "duration_months": null, "start": null },
+  "budget": {
+    "total_tl": null,
+    "items": { "Makine Teçhizat": 0, "Hizmet Alımı": 0, "Sarf Malzemesi": 0, "Ulaşım": 0 }
+  },
+  "documents": {
+    "proposal": "report/drafts/proposal.md",
+    "tybs": "report/tybs/tybs-application.md",
+    "external_source_registry": null
+  },
+  "checks": {
+    "extra_brands": [],
+    "internal_id_patterns": [],
+    "institution_aliases": {},
+    "ethics_required": null
+  },
+  "ai_tools": []
+}

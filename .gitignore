@@ -1,0 +1,18 @@
+# Local environment and caches
+.venv/
+__pycache__/
+.pytest_cache/
+.ruff_cache/
+sources/cache/
+
+# Copyrighted full texts are not shared
+sources/pdf/
+
+# Regenerated outputs
+analysis/outputs/
+data/processed/
+report/**/*_pages/
+report/drafts/test-report*
+
+# Local AI-use log (kept locally for the disclosure)
+logs/ai-use-log.md

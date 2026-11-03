@@ -1,0 +1,12 @@
+# Metin dosyaları depoda LF; Windows'ta da araçlar LF ile çalışır.
+* text=auto eol=lf
+
+# PowerShell betikleri Windows'ta CRLF ile daha güvenli çalışır.
+*.ps1 text eol=crlf
+
+# İkili dosyalar
+*.docx binary
+*.xlsx binary
+*.pdf binary
+*.png binary
+*.jpg binary

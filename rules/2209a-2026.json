@@ -1,0 +1,97 @@
+{
+  "_note": "2209-A 2026 çağrısının biçim kuralları. Her blok 'source' ile resmî belgeye bağlanır. Yeni çağrıda bu dosyayı kopyalayın (2209a-2027.json) ve call-update skill'i ile her değeri yeniden doğrulayın.",
+  "call_name": "2209-A Üniversite Öğrencileri Araştırma Projeleri Destekleme Programı",
+  "year": 2026,
+  "checked_on": "2026-11-03",
+  "timeline": {
+    "application_open": "2026-10-07",
+    "application_deadline": "2026-11-11T17:30",
+    "advisor_approval_deadline": "2026-11-11T17:30",
+    "institution_esign": ["2026-11-16", "2026-11-23"],
+    "source": "T01"
+  },
+  "budget": {
+    "max_tl": 12000,
+    "items": ["Makine Teçhizat", "Hizmet Alımı", "Sarf Malzemesi", "Ulaşım"],
+    "excluded_items": ["Konferans katılım", "Yayın", "Patent", "Konaklama", "Gündelik (yeme-içme)"],
+    "iban": "Başvuruda girilen IBAN proje yürütücüsü öğrenciye ait olmalıdır.",
+    "note": "Gider kalemleri yalnız TYBS bütçe ekranında girilir; başvuru kapandıktan sonra değişmez.",
+    "source": "T02 §2.1.1 (kalem listesi), T02 §2.1.2 + T01 (bütçe dışı), T01 (IBAN), T02 §2.2 (değişmezlik)"
+  },
+  "duration": { "max_months": 12, "source": "T01, T02 §2.2" },
+  "title": { "max_chars": 495, "source": "TYBS ekranı (resmî belgede yok)" },
+  "keywords": { "min": 3, "max": 5, "separator": ",", "source": "TYBS ekranı (resmî belgede yok)" },
+  "abstract": {
+    "min_words": 25,
+    "max_words": 450,
+    "scope": ["bilimsel nitelik", "yöntem", "proje yönetimi", "yaygın etki"],
+    "source": "T03"
+  },
+  "section_min_chars": { "min_chars": 350, "sections": ["1.1", "1.2", "2."], "source": "T03" },
+  "work_plan": {
+    "section": "3.1",
+    "min_steps": 1,
+    "contribution_total": 100,
+    "forbidden_steps": ["literatür tarama", "sonuç rapor", "sonuçların paylaşım", "malzeme alım"],
+    "columns": ["Proje Süresi (Ay)", "Faaliyetler", "Kim(ler) Tarafından Gerçekleştirileceği", "Başarı Ölçütü ve Katkısı"],
+    "source": "T03, TYBS"
+  },
+  "references": { "max_chars": 32000, "doi_required": true, "all_cited": true, "source": "max_chars: TYBS ekranı (resmî belgede yok); doi_required/all_cited: T03, T06" },
+  "partners": { "max": 4, "source": "TYBS" },
+  "images": { "extensions": [".jpg", ".jpeg", ".png"], "source": "T03" },
+  "brand_ban": {
+    "rule": "Başlık ve öneride kurum, firma, ticari ürün veya marka öne çıkarılmaz. Kaynakça künyesindeki yayın yeri adları kapsam dışıdır.",
+    "default_brands": ["OpenAI", "ChatGPT", "Claude", "Anthropic", "Gemini", "Google", "Microsoft", "Copilot", "GitHub", "Apple", "Amazon", "Meta"],
+    "source": "T02 §4.1.8"
+  },
+  "tybs_sections": ["Özet", "1.1", "1.2", "2.", "3.1", "3.2", "3.3", "4.", "5.", "6."],
+  "impact_categories": ["Bilimsel/Akademik", "Ekonomik/Ticari/Sosyal", "Yeni Proje"],
+  "ai_disclosure": {
+    "content": ["araç adı ve sürümü", "aşama/bölüm", "kullanımın niteliği"],
+    "note": "ÜYZ Rehberi (T05 §1.2.2, s.12) beyanın TÜBİTAK çevrimiçi başvuru sisteminde bu amaçla ayrılmış bölümde yapılmasını ister. Gözlem: 2026 TYBS başvuru ekranında bu amaçla ayrılmış serbest beyan alanı görülmedi (yalnız ÜYZ Kaynakça Taahhütnamesi vardı); alanın yeri BİDEB'e veya danışmana sorulmalıdır. Rehberin isteği ile ekranda görülen bu ikisi birbirinden ayrı tutulur.",
+    "source": "T05 §1.2.2 (s.12), T02 §8.4-8.5, TYBS"
+  },
+  "advisor": { "max_projects": 5, "requirements": ["tam zamanlı", "YÖKSİS/ARBİS güncel"], "source": "T02 §4.1.7, §4.3.3" },
+  "eligibility": {
+    "single_application": "Aynı dönemde birden fazla başvuru yapılamaz; devam eden 2209-A veya 2209-B projesinde yürütücü ya da ortak olanlar başvuramaz.",
+    "student_type": "Türkiye'de ön lisans veya lisans programına kayıtlı öğrenci olmak; Açık Öğretim ve Hazırlık Sınıfı öğrencileri yürütücü ya da ortak olamaz.",
+    "arbis_registration": "Yürütücünün ARBİS'e kayıtlı ve tüm bilgilerinin güncel olması zorunludur.",
+    "no_prior_support": "Daha önce aynı proje için TÜBİTAK'tan destek alınmamış olması gerekir.",
+    "source": "single_application: T02 §4.1.4; student_type: T02 §4.1.1 (+dipnot); arbis_registration: T02 §4.1.2; no_prior_support: T02 §4.1.5"
+  },
+  "language": {
+    "proposal_language": "Araştırma önerisi TÜBİTAK formatında ve Türkçe hazırlanır.",
+    "pre_screening": "Formata ve Türkçe diline uymayan başvurular ön incelemede elenir.",
+    "source": "proposal_language: T02 §4.2.1; pre_screening: T02 §5.1.2"
+  },
+  "ethics": {
+    "rule": "Çalışma etik kurul onayına tabi ise, Etik Kurul Onay/Muafiyet Belgesi süresi içinde yüklenmezse proje yürürlüğe girmez.",
+    "source": "T02 §5.3.1"
+  },
+  "evaluation": {
+    "criteria_weights": {
+      "bilimsel_nitelik": 35,
+      "yöntem": 25,
+      "proje_yönetimi": 20,
+      "yaygın_etki": 20
+    },
+    "special_needs_bonus": "Proje ekibinde özel gereksinimli birey beyanı doğrulanırsa değerlendirme toplam puanına 1 puan eklenir.",
+    "source": "criteria_weights: T02 §5.2.1; special_needs_bonus: T02 §4.2.3, §5.2.6"
+  },
+  "withdrawal": {
+    "rule": "Başvuru, çağrı kapanış tarihinden itibaren 1 (bir) ay içinde TYBS üzerinden geri çekilebilir.",
+    "source": "T02 §4.3.5"
+  },
+  "acknowledgement": {
+    "rule": "Program kapsamında üretilen çıktılarda ve her türlü duyuru, yayın ve bilimsel etkinlikte TÜBİTAK desteğinin belirtilmesi ve TÜBİTAK logosunun kullanılması zorunludur.",
+    "source": "T02 §6.6, T01"
+  },
+  "sources": [
+    { "id": "T01", "name": "2209-A program sayfası", "url": "https://tubitak.gov.tr/tr/burslar/lisans-onlisans/destek-programlari/2209-universite-ogrencileri-arastirma-projeleri-destekleme-programi", "sha256_16": null },
+    { "id": "T02", "name": "2026 Çağrı Duyurusu", "url": "https://tubitak.gov.tr/sites/default/files/2026-10/2209-A_2026_Yili_Cagri_Duyurusu.pdf", "sha256_16": "BAA725C095DEE354" },
+    { "id": "T03", "name": "Başvuru İçeriği Bilgi Notu", "url": "https://tubitak.gov.tr/sites/default/files/2026-10/2209-A_Basvuru_Icerigi_Bilgi_Notu.pdf", "sha256_16": "D5BF5477971B5924" },
+    { "id": "T05", "name": "Üretken Yapay Zekâ Rehberi v04", "url": "https://tubitak.gov.tr/sites/default/files/2026-01/UYZ_Rehberi_v04_TR.pdf", "sha256_16": "FDFE5238DD7C773E" },
+    { "id": "T06", "name": "Bibliyografik Verilerin Düzenlenmesi", "url": "https://tubitak.gov.tr/tr/duyuru/bibliyografik-verilerin-duzenlenmesi", "sha256_16": null },
+    { "id": "T07", "name": "Sonuç Raporu Formatı", "url": "https://tubitak.gov.tr/sites/default/files/2023-09/2209-a_sonuc_raporu_formati.docx", "sha256_16": "8401F2AE6E0E8D08" }
+  ]
+}
