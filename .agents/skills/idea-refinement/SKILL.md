@@ -73,6 +73,13 @@ Fikir netleşip özgünlük boşluğu kanıtlanacaksa `academic-research`'e geç
 11. Netleşen sonucu `project/project-brief.md`'ye yaz. Kullanıcının kendi dilini
     koru; metni ekip sahiplenebilmeli.
 
+## Konu seçimi ve kapsam (`project/writing-guide.md`)
+
+- Kapsamı lisans düzeyine ve süre/bütçe üst sınırına göre daralt. Büyük bir sorunun küçük, bitirilebilir bir parçasını seç.
+- "Bu fikir daha önce başka bir kaynaktan desteklendi mi?" diye sor. Aynı proje için önceki TÜBİTAK desteği uygunluğu bozar (rules `eligibility`).
+- Ekip ve danışmanın bu konuda neyi gerçekten yapabildiğini sor. Konu-ekip-altyapı uyumu hakemin baktığı yerdir.
+- Hazırlığa erken başla; metni son günden önce bitirip birkaç kez oku.
+
 ## Hata durumları
 - Fikir çok geniş → birlikte daraltacak somut bir alt soruya in; tek fikir seçtir.
 - Özgünlük belirsiz → "aday katkı" diye yaz, `academic-research`'e yönlendir.

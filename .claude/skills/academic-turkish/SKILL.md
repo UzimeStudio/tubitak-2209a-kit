@@ -37,6 +37,18 @@ Hakem, somut yöntemi ve ölçülebilir çıktısı olan başvuruyu arar; pazarl
 - **Klişe gerekçe**: "günümüzde teknolojinin hızla gelişmesiyle…" gibi içeriksiz açılışlar. Doğrudan probleme girilir.
 - **Yöntemsiz hedef**: "yapay zekâ ile analiz edilecektir" gibi hangi yöntem/ölçüt olduğu belirsiz cümleler somutlaştırılır (başarı ölçütü verilir).
 
+## Boş vaat kalıpları
+
+Bu kalıplar hakemin "kanıt yok" diye işaretlediği cümlelerdir. Yerine somut bilgi koy. Tam liste ve örnekler: `project/writing-guide.md`, otomatik tarama: `uv run python tools/check_writing.py <md>`.
+
+| Zayıf | Güçlü yön |
+| --- | --- |
+| "…alana katkı sağlayacaktır." | Kimin, neyi, ne kadar kazanacağını yaz. |
+| "Uygun yöntemler kullanılarak…" | Yöntemin adını, aracını ve neden seçildiğini yaz. |
+| "Herhangi bir risk öngörülmemektedir." | En olası 2–3 riski ve B planını yaz. |
+| "Proje zamanında ve başarıyla tamamlanacaktır." | İş paketi başına sayısal başarı ölçütü yaz. |
+| "Literatürde ilk kez…" | Taramayı ve boşluğu kaynakla göster ya da iddiayı yumuşat. |
+
 ## TYBS taahhüdü — öneri metni ekibin kendi sözleri olmalı
 TYBS başvurusunda öğrenci, öneri metninin kendi ürünü olduğunu taahhüt eder. ÜYZ yalnız taslak/öneri üretir; son metin ekibin kendi cümleleriyle, kendi anlayarak yeniden yazılır. Bu skill metni cilalar ama ekibin yerine yazmaz: ÜYZ kaynaklı büyük yeniden yazımda ekibe "bu paragrafı kendi cümlenizle onaylayın/yeniden yazın" denir ve ÜYZ katkısı ai-research-compliance kaydına işlenir. Son karar ve bilimsel sorumluluk ekiptedir.
 

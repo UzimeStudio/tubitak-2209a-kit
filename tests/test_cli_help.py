@@ -19,6 +19,7 @@ CLI = [
     "check_report",
     "check_application",
     "check_consistency",
+    "check_writing",
     "call_watch",
     "status",
     "init_project",

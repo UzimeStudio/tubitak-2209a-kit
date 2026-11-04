@@ -176,7 +176,7 @@ def tybs_checks(md: str, secs: dict[str, str], r: dict) -> list[str]:
     # "Smith vd.'nin (2020)". Ek ilk yazarda, ikinci yazarda veya "vd." sonrasında olabilir;
     # kesme işareti (' veya ') ve sonrası atılır, yalnız ilk soyad (group 1) anahtara girer.
     suffix = r"(?:['’][a-zçğıöşü]+)?"
-    # Önce çok sözcüklü kurum/belge adıyla parantez içi atıflar: "(Aydınlatma Tebliği, 2018)",
+    # Önce çok sözcüklü kurum/belge adıyla parantez içi atıflar: "(Dünya Sağlık Örgütü, 2018)",
     # "(Türkiye İstatistik Kurumu, 2024; Soyad, 2020)". Anahtar ilk sözcüktür; adın kalan
     # sözcükleri (ör. "Kurumu, 2024") aşağıdaki tek sözcüklü desene ayrıca yakalatılmaz.
     covered: list[tuple[int, int]] = []

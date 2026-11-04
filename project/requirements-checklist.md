@@ -38,6 +38,12 @@ araç/skill ile DOLU gelir. Kaynaklar: [tubitak-sources.md](tubitak-sources.md).
 | A23 | Başvuruda girilen IBAN proje yürütücüsü öğrenciye ait | T01 / rules `budget.iban` | `budget-timeline` skill | |
 | A24 | Başvuru çağrı kapanışından itibaren 1 ay içinde geri çekilebilir | T02 §4.3.5 / rules `withdrawal` | — (ekip) | |
 | A25 | Çıktılarda TÜBİTAK desteğinin belirtilmesi ve logo kullanımı zorunlu | T02 §6.6, T01 / rules `acknowledgement` | — (ekip) | |
+| A26 | Bölüm içerik yükümlülükleri: 1.1 kapsam/sınır/önem + literatür eksikliği + araştırma sorusu/hipotez (+ varsa 12. Kalkınma Planı/2030 SanTek ilişkisi); 1.2 açık-ölçülebilir-gerçekçi-ulaşılabilir hedef; 2. yöntem (tasarım/değişken/istatistik, ön çalışma, takvim ilişkisi); 3.2 B Planı temel hedeften saptırmamalı; 3.3 mevcut altyapı/ekipman; 4. kategorili ve ölçülebilir çıktı | T03 / rules `section_requirements` | `tybs-application-check`, `reviewer-simulation` skill | |
+| A27 | Ön inceleme ret nedenleri: koşul ihlali, süresinde onaylanmama, format/min karakter, e-posta/posta/faks ile gönderim (imha), yanıltıcı bilgi | T02 §5.1.1, §5.1.2, §4.3.1, §4.2.4 / rules `pre_screening` | `academic-audit` skill (ilk kapı) | |
+| A28 | TYBS giriş araçları: Resim Yükle / Tablo / Özel karakter butonları, denklem, yapıştırmada biçim bozulması, "Proje Önerisini Önizle" | T03 / rules `tybs_input` | `tybs-application-check` skill | |
+| A29 | ÜYZ kullanımı: nihai sorumluluk + doğrulama yükümlülüğü, beyan eşiği ("önemli ölçüde kullanım"; salt dil denetimi muaf), yasak kullanımlar (fabrikasyon/falsifikasyon/aşırma), ÜYZ görselinin belirtilmesi, gizli/kişisel bilginin ÜYZ'ye girilmemesi, taslağın nihai metin sayılmaması | T05 §1.3.1, §1.2.1, §1.3.3, §1.1.2, §1.4.4/§1.5.3 / rules `ai_use` | `ai-research-compliance` skill | |
+| A30 | Etik genişletme: intihal tanımı (AYEK Md. 9/1-c), uydurma/çarpıtma, sahte kaynak riski, destek öncesi benzerlik kontrolü; dilimleme için resmî madde bulunamadı | T02 §5.3.2, T05 §1.3.2/§1.3.3/§1.1.2 / rules `ethics` | `academic-audit`, `ai-research-compliance` skill | |
+| A31 | Değerlendirme eşik notu: taban puan yayımlanmaz, kritik/öncelikli alanlara göre ayrı belirlenebilir | T02 §5.2.3, §5.3.2 / rules `evaluation.cutoff_note` | `reviewer-simulation` skill | |
 
 ## B. Sonuç raporu (proje desteklenirse)
 
@@ -51,3 +57,4 @@ araç/skill ile DOLU gelir. Kaynaklar: [tubitak-sources.md](tubitak-sources.md).
 | B6 | Proje süresi içinde yükleme | T02 | — (ekip, takvim hatırlatması) | |
 | B7 | ÜYZ ilke ve beyanlarına uyum | T02 / rules `ai_disclosure` | `ai-research-compliance` skill | |
 | B8 | Yayın/sunum çıktıları | T07 | `citation-management` skill | |
+| B9 | İzleme kuralları: demirbaş envanter belgesi (sonuç raporuna zorunlu ek), fatura yürütücü/ortak adına + isimsiz fiş geçersiz/iade, danışman değişikliği yazılı onay, ortak değişikliği + sayı sabitliği, bitişe <3 ay değişiklik kilidi, sonuç raporu gecikmesi yaptırımı | T02 §6.2, §6.8, §6.3, §6.4, §6.5, §6.12/§6.13 / rules `monitoring` | `final-report`, `academic-audit` skill | |

@@ -37,6 +37,8 @@ biri başarısız olunca diğerleri atlanmasın ve hangi kodun hangi araçtan ge
 
 Her aracın bulgusunu tabloya al. Araç çıktısını olduğu gibi aktar; süsleme.
 
+Yazım taraması (uyarı düzeyi): `uv run python tools/check_writing.py <md>`. Belirsiz vaat, ölçülemeyen başarı ölçütü ve atıfsız 1.1 burada çıkar; zincirdeki zayıf halkayı gösterir.
+
 ### 2. Elle av (makinenin yakalayamadığı)
 Araçlar biçimi ve sayıyı görür; mantığı görmez. Şu zincirleri elle izle:
 

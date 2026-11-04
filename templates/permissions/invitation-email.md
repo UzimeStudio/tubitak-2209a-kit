@@ -12,11 +12,11 @@ Sayın TBD,
 
 TBD (kurum/bölüm)'de, TBD (danışman unvanı ve adı) danışmanlığında bir lisans araştırma projesi yürütüyoruz. Proje TBD (kısa amaç) amaçlamaktadır.
 
-TBD (katılım nesnesi: kurumunuz / siteniz / katılımınız) bu araştırmaya katılmasını rica ediyoruz. Katılırsanız:
+TBD (katılım nesnesi: katılımınız / kurumunuz / veri kümeniz) bu araştırmaya katılmasını rica ediyoruz. Katılırsanız:
 
 - TBD (ne yapılacağı: kapsam, süre, yöntem kısaca).
 - TBD (ne toplanacağı ve neyin toplanmayacağı; kişisel veri işleniyorsa en aza indirme ilkesi).
-- TBD (geri bildirim verilecekse neyi içerdiği; resmî/hukuki görüş olmadığı).
+- TBD (geri bildirim verilecekse neyi içerdiği; hukuk/politika/denetim konulu çalışmalarda ayrıca: resmî/uzman görüşü olmadığı).
 - Sonuçlar yalnız toplu ve kimliksiz olarak yayımlanır; kimliğiniz açıklanmaz.
 - Katılım gönüllüdür; istediğiniz an çekilebilir ve verilerin silinmesini isteyebilirsiniz.
 

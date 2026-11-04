@@ -4,7 +4,7 @@
 İnsan katılımcısından (anket, görüşme, deney, gözlem) onam almak için.
 Konu-bağımsızdır. Çoğu insan katılımcılı çalışma etik kurul onayı/muafiyeti
 gerektirir; `process.md`'deki etik kurul maddesine bakın. `TBD` yerlerini
-doldurun. Kişisel veri işleniyorsa 6698 sayılı Kanun'a genel atıf yeterli.
+doldurun.
 -->
 
 ## Araştırma hakkında

@@ -27,14 +27,16 @@ geçirilmelidir.
 ## İletişimde kullanılacak ve kaçınılacak ifadeler
 | Kullan | Kullanma |
 | --- | --- |
-| "Akademik araştırma; katılım gönüllüdür" | "Ücretsiz hizmet / denetim" (ticari izlenim) |
-| "Sonuç bir resmî/hukuki görüş değildir" | Kesin hüküm/garanti dili |
-| Nötr, olgusal dil | Suçlayıcı veya abartılı dil |
+| "Akademik araştırma; katılım tamamen gönüllüdür" | Baskı veya teşvik izlenimi veren dil (zorunluluk, ödül vaadi) |
+| "İstediğiniz an çekilebilirsiniz" | Kesin hüküm/garanti ya da abartılı sonuç dili |
+| Nötr, olgusal, saygılı dil | Suçlayıcı veya değer yargısı içeren dil |
+
+<!-- Projeniz bir kurum/sistem hakkında değerlendirme içeriyorsa (ör. hukuk, politika, denetim konulu çalışmalar), geri bildirimin resmî/uzman görüşü olmadığını ayrıca belirtin. Diğer alanlarda bu uyarı gerekmez. -->
 
 ## Kayıt ve gizlilik
 - İmzalı belgeler ve iletişim günlüğü, erişimi sınırlı bir yerde tutulur; kişisel tanımlayıcılar analiz verisine girmez.
 - Analizde özneler kod ile anılır; yayında kimlik verilmez.
-- Kişisel veri işleniyorsa saklama, yedekleme ve imha 6698 sayılı Kanun ilkeleriyle uyumlu planlanır.
+- Kişisel veri işleniyorsa saklama, yedekleme ve imha ilgili veri koruma mevzuatı ilkeleriyle (amaçla sınırlılık, veri en aza indirme, güvenlik) uyumlu planlanır.
 
 ## Etik kurul
 <!-- Çoğu insan katılımcılı veya kişisel veri işleyen çalışma etik kurul onayı/muafiyeti gerektirir. Kuruma sorun. -->

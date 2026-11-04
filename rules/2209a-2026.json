@@ -64,9 +64,88 @@
     "pre_screening": "Formata ve Türkçe diline uymayan başvurular ön incelemede elenir.",
     "source": "proposal_language: T02 §4.2.1; pre_screening: T02 §5.1.2"
   },
+  "section_requirements": {
+    "_note": "T03 Başvuru İçeriği Bilgi Notu'nun her bölüm için istediği içerik maddeleri. Alt anahtarlar TYBS bölüm kodlarıdır. Sabit sayı/eşik yoktur; içerik yükümlülükleridir.",
+    "1.1": [
+      "Konunun kapsamı, sınırları ve önemi ortaya konulur.",
+      "Yapılacak çalışmalarla literatürdeki hangi eksikliğin nasıl giderileceği (literatüre atıfla) açıklanır.",
+      "Araştırma sorusu ve varsa hipotez(ler) tanımlanır.",
+      "Varsa 12. Kalkınma Planı / 2030 Sanayi ve Teknoloji Stratejisi kritik alanlarıyla ilişki ve sağlayacağı yarar gerekçelendirilir."
+    ],
+    "1.2": [
+      "Amaç ve hedefler açık, ölçülebilir, gerçekçi ve ulaşılabilir nitelikte yazılır."
+    ],
+    "2.": [
+      "Yöntem/teknikler literatüre atıfla, amaç ve hedefe elverişliliğiyle ortaya konur.",
+      "Araştırma tasarımı, bağımlı ve bağımsız değişkenler, istatistiksel yöntemler vb. unsurlar yer alır.",
+      "Varsa ön çalışma/fizibilite sunulur; yöntem çalışma takvimi ile ilişkilendirilir."
+    ],
+    "3.1": [
+      "Başarı ölçütü ölçülebilir ve izlenebilir nitelikte (nicel veya nitel ölçütlerle) ve araştırmanın başarısına katkısıyla sunulur."
+    ],
+    "3.2": [
+      "Riskler ve alınacak tedbirler (B Planı) Risk Yönetimi Tablosu'nda verilir.",
+      "B Plan(lar)ının uygulanması araştırmanın temel hedeflerinden sapmaya yol açmamalıdır."
+    ],
+    "3.3": [
+      "Projenin yürütüleceği kurum ve kuruluşlarda var olan ve projede kullanılacak altyapı/ekipman belirtilir."
+    ],
+    "4.": [
+      "Öngörülen çıktılar amaçlarına göre kategorilere ayrılır; ölçülebilir ve gerçekçi hedeflere dayandırılır."
+    ],
+    "source": "T03 (1.1 kapsam/sınır/önem, literatür eksikliği, araştırma sorusu/hipotez, 12. Kalkınma Planı/2030 SanTek ilişkisi; 1.2 açık-ölçülebilir-gerçekçi-ulaşılabilir; 2. yöntem/tasarım/değişken/istatistik, ön çalışma, takvim ilişkisi; 3.1 ölçülebilir başarı ölçütü; 3.2 Risk Yönetimi Tablosu/B Planı, temel hedeften sapmama; 3.3 mevcut altyapı/ekipman; 4. kategorili ve ölçülebilir çıktılar)"
+  },
+  "pre_screening": {
+    "_note": "Bilimsel değerlendirmeye girmeden ön incelemede eleme/ret nedenleri.",
+    "rules": [
+      "Başvuru koşullarından herhangi birini sağlamayan başvurular bilimsel değerlendirmeye tabi tutulmadan ön incelemede elenir.",
+      "Son başvuru/onay tarihine kadar onaylanmayan (danışman/kuruluş onayı tamamlanmayan) başvurular elenir.",
+      "TÜBİTAK formatına uymayan, şablonda belirtilen minimum karakter sınırlamalarına uyulmayan başvurular elenir.",
+      "Çevrimiçi başvuru dışında BİDEB'e e-posta/posta/faks ile gönderilen belgeler değerlendirmeye alınmaz ve imha edilir.",
+      "Başvuru sırasında yanıltıcı veya gerçeğe aykırı bilgi verenler hukuken sorumludur."
+    ],
+    "source": "T02 §5.1.1 (koşul ihlali, onaylanmama, faks/e-posta elenmesi), §5.1.2 (format/minimum karakter), §4.3.1 (e-posta/posta/faks imhası), §4.2.4 (yanıltıcı bilgi sorumluluğu)"
+  },
+  "monitoring": {
+    "_note": "Proje yürürlüğe alındıktan sonraki izleme/sonuçlandırma kuralları (sık yürütme hataları).",
+    "demirbas_envanter": "Demirbaş grubuna giren bir ürün alınmışsa üniversiteden alınacak envanter kayıt belgesi alınır ve sonuç raporuna eklenmesi zorunludur.",
+    "invoice_rules": "Harcamalar fatura ile belgelendirilir; faturalar proje yürütücüsü ya da ortak adına düzenlenir. Üzerinde isim olmayan fişler geçersiz sayılır ve iade istenir. Fatura asılları TÜBİTAK tarafından istenebilir.",
+    "advisor_change": "Proje yürürlüğe alındıktan sonra akademik danışman değişikliği yazılı onayla talep edilir.",
+    "partner_change": "Proje yürürlüğe alındıktan sonra proje ortaklarında değişiklik yazılı onayla talep edilir; ortak sayısı sabit kalır.",
+    "last_3_months_lock": "Proje bitiş tarihine 3 aydan az süre kaldığında proje ortağı ve/veya akademik danışman değişiklik talepleri kabul edilmez.",
+    "final_report_delay": "Sonuç raporu destek bitiş tarihine kadar BİDEB sistemine yüklenmez veya revize raporu kabul edilmezse proje kusura göre yürürlükten kaldırılır veya iptal edilir.",
+    "source": "T02 §6.2 (fatura/isim/iade), §6.8 (demirbaş envanter belgesi), §6.3 (danışman değişikliği), §6.4 (ortak değişikliği), §6.5 (son 3 ay kilidi), §6.12/§6.13 (sonuç raporu gecikmesi yaptırımı)"
+  },
+  "tybs_input": {
+    "_note": "TYBS zengin metin girişinde içerik/biçim bozulmasını önleyen araçlar (T03).",
+    "rules": [
+      "Görseller 'Resim Yükle', tablolar 'Tablo' butonuyla eklenir.",
+      "Özel karakterler (< > ~ vb.) ve integral/kök/toplam gibi matematiksel semboller 'Özel karakter' menüsünden eklenir.",
+      "Denklem/formüller özel karakter menüsüyle metin olarak yazılır veya başka ortamda hazırlanıp ekran görüntüsü 'Resim Yükle' ile eklenir.",
+      "Metin başka ortamdan yapıştırıldığında biçim bozulabilir; tablo genişlikleri 'tablo özellikleri'/'hücre özellikleri' alanlarından ayarlanır.",
+      "Eklenen proje metni 'Proje Önerisini Önizle' butonuyla kontrol edilmeli ve eksik/hatalı içerik olmadığından emin olunduktan sonra onaylanmalıdır."
+    ],
+    "source": "T03 (Resim Yükle/Tablo/Özel karakter butonları, denklem, yapıştırmada biçim bozulması, Proje Önerisini Önizle)"
+  },
   "ethics": {
     "rule": "Çalışma etik kurul onayına tabi ise, Etik Kurul Onay/Muafiyet Belgesi süresi içinde yüklenmezse proje yürürlüğe girmez.",
-    "source": "T02 §5.3.1"
+    "plagiarism_definition": "İntihal (Aşırma), AYEK Yönetmeliği Madde 9/1-c kapsamında, başkalarının fikir, yöntem, veri, yazı veya şekillerini usulüne uygun atıf yapmadan kullanmaktır.",
+    "fabrication_falsification": "Veri/sonuç uydurmak (fabrikasyon, AYEK Madde 9/1-a ve 9/1-b) veya mevcut veri/sonuçları çarpıtmak (falsifikasyon) bilimsel yaniltma eylemidir.",
+    "fake_references": "ÜYZ hatalı veya uydurma referanslar üretebilir; her künye doğrulanmadan kullanılamaz (sahte kaynak riski).",
+    "similarity_check": "Bilimsel değerlendirme aşamasında destek öncesi benzerlik kontrolü yapılabilir.",
+    "salami_note": "'Dilimleme' (salami) için 2209-A resmî belgelerinde özel bir madde bulunamadı; en yakın dayanak benzerlik kontrolü ve AYEK'in genel bilimsel yanıltma hükümleridir.",
+    "source": "T02 §5.3.1 (etik kurul belgesi), §5.3.2 (benzerlik kontrolü); T05 §1.3.2 ve AYEK Yönetmeliği Madde 9/1-c (intihal), §1.3.3 / Madde 9/1-a-b (uydurma/çarpıtma), §1.1.2 (uydurma referans riski); dilimleme için resmî madde bulunamadı"
+  },
+  "ai_use": {
+    "_note": "ÜYZ Rehberi (T05) başvuru sahibinin yükümlülük ve yasakları. Beyan içeriği için ayrıca ai_disclosure bloğuna bakın.",
+    "final_responsibility": "Proje önerisindeki tüm bilgi, veri, analiz, iddia ve referansların doğruluğundan başvuru sahibi tek başına ve tamamen sorumludur; ÜYZ kullanımı bu sorumluluğu azaltmaz, kaldırmaz veya devretmez.",
+    "verification_duty": "Halüsinasyon/konfabülasyon riski nedeniyle her ÜYZ çıktısı (metin, veri, kod, referans) titizlikle doğrulanmalıdır.",
+    "declaration_threshold": "'Önemli ölçüde kullanım' (bölüm taslağı, analiz kodu, veri analizi, görsel üretimi, ana argümanı destekleyen içerik) beyan edilir; salt dilbilgisi/yazım denetimi ve dil-üslup iyileştirmesi beyan eşiğinin altındadır.",
+    "prohibited_uses": "ÜYZ ile veri/sonuç uydurma (fabrikasyon), çarpıtma (falsifikasyon) ve aşırma (intihal) kesinlikle yasaktır; AYEK kapsamında etik ihlaldir.",
+    "visual_disclosure": "ÜYZ ile üretilen görsellerin yapay zekâ ile oluşturulduğu şeffaflıkla belirtilmelidir.",
+    "confidentiality": "Gizli, kişisel (KVKK kapsamında korunan) veya yayımlanmamış veriler ÜYZ araçlarına girilmemeli/yüklenmemelidir.",
+    "draft_not_final": "ÜYZ ile üretilen bölüm taslakları asla nihai metin sayılmaz; yalnızca başlangıç noktasıdır, içerik ekibin kendi bilgi ve analiziyle özgün kurulur.",
+    "source": "T05 §1.3.1 (nihai sorumluluk, doğrulama yükümlülüğü), §1.2.1 (önemli ölçüde kullanım eşiği, dil denetimi muafiyeti), §1.3.3 (yasak kullanımlar), §1.1.2 (görsel belirtimi, taslak nihai değil), §1.4.4/§1.5.3 (gizli/kişisel bilgi ÜYZ'ye girilmemesi)"
   },
   "evaluation": {
     "criteria_weights": {
@@ -76,7 +155,8 @@
       "yaygın_etki": 20
     },
     "special_needs_bonus": "Proje ekibinde özel gereksinimli birey beyanı doğrulanırsa değerlendirme toplam puanına 1 puan eklenir.",
-    "source": "criteria_weights: T02 §5.2.1; special_needs_bonus: T02 §4.2.3, §5.2.6"
+    "cutoff_note": "Destek taban (kesme) puanı sayısal olarak yayımlanmaz; bilimsel değerlendirmede destek taban puanı üzerinde bulunan projeler için destek kararı verilir. 12. Kalkınma Planı ve 2030 Sanayi ve Teknoloji Stratejisi'nde yer verilen kritik/öncelikli alanlara göre destek taban puanı ayrı belirlenebilir.",
+    "source": "criteria_weights: T02 §5.2.1; special_needs_bonus: T02 §4.2.3, §5.2.6; cutoff_note: T02 §5.2.3, §5.3.2"
   },
   "withdrawal": {
     "rule": "Başvuru, çağrı kapanış tarihinden itibaren 1 (bir) ay içinde TYBS üzerinden geri çekilebilir.",
@@ -92,6 +172,8 @@
     { "id": "T03", "name": "Başvuru İçeriği Bilgi Notu", "url": "https://tubitak.gov.tr/sites/default/files/2026-10/2209-A_Basvuru_Icerigi_Bilgi_Notu.pdf", "sha256_16": "D5BF5477971B5924" },
     { "id": "T05", "name": "Üretken Yapay Zekâ Rehberi v04", "url": "https://tubitak.gov.tr/sites/default/files/2026-01/UYZ_Rehberi_v04_TR.pdf", "sha256_16": "FDFE5238DD7C773E" },
     { "id": "T06", "name": "Bibliyografik Verilerin Düzenlenmesi", "url": "https://tubitak.gov.tr/tr/duyuru/bibliyografik-verilerin-duzenlenmesi", "sha256_16": null },
-    { "id": "T07", "name": "Sonuç Raporu Formatı", "url": "https://tubitak.gov.tr/sites/default/files/2023-09/2209-a_sonuc_raporu_formati.docx", "sha256_16": "8401F2AE6E0E8D08" }
+    { "id": "T07", "name": "Sonuç Raporu Formatı", "url": "https://tubitak.gov.tr/sites/default/files/2023-09/2209-a_sonuc_raporu_formati.docx", "sha256_16": "8401F2AE6E0E8D08" },
+    { "id": "T08", "name": "Proje Yazma Eğitimi Bölüm 1", "url": "https://www.tubitak.gov.tr/sites/default/files/proje_yazma_egitimi-1._bolum.pdf", "sha256_16": "CFB2CB35621BBFCD", "scope": "genel TÜBİTAK rehberi, 2209-A'ya özgü değil" },
+    { "id": "T09", "name": "Proje Yazma Eğitimi Bölüm 2", "url": "https://www.tubitak.gov.tr/sites/default/files/proje_yazma_egitimi-2._bolum.pdf", "sha256_16": "8D844CA430D04BB5", "scope": "genel TÜBİTAK rehberi, 2209-A'ya özgü değil" }
   ]
 }

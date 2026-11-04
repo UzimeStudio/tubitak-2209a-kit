@@ -25,16 +25,28 @@ Yollar `tools/config.py` içindeki `PATHS`'ten okunur.
 
 ## Prosedür
 1. Değişkenler `data/data-dictionary.md`'de tanımlıdır; yoksa önce tanımlanır.
-2. İstatistik fonksiyonları `tools/stats.py`'den alınır (gerçek adlar):
+2. Kitte hazır gelen istatistik fonksiyonları `tools/stats.py`'den alınır (gerçek adlar):
    | Fonksiyon | Kullanım |
    | --- | --- |
    | `wilson_ci(successes, n)` | Oran ve %95 Wilson güven aralığı |
    | `worst_case_margin(n)` | p=0,5 için en kötü durum güven aralığı yarı genişliği (örneklem büyüklüğü planında) |
-   | `association_test(table)` | r×c çapraz tabloda kategorik ilişki testi (chi-square; seyrek 2×2'de Fisher exact) |
-   | `mcnemar_test(both_yes, only_old, only_new, both_no)` | Eşli ikili ölçüm değişimi; az tutarsız çiftte exact |
+   | `association_test(table)` | r×c çapraz tabloda kategorik ilişki (ki-kare; seyrek 2×2'de Fisher exact) |
+   | `mcnemar_test(both_yes, only_a, only_b, both_no)` | Aynı birimlerde eşli iki koşul/yöntem; az tutarsız çiftte exact |
    | `holm(pvalues)` | Çoklu karşılaştırma (Holm) düzeltmesi |
-   | `cohen_kappa(labels_a, labels_b)` | Etiketçi uyumu + ham uyum + %95 aralık |
+   | `cohen_kappa(labels_a, labels_b)` | Değerlendirici/kodlayıcı uyumu + ham uyum + %95 aralık |
    | `prf1(tp, fp, fn)` | Precision, recall, F1 + Wilson güven aralıkları |
+
+   Kitte hazır fonksiyonu olmayan yaygın yöntemler doğrudan `scipy.stats` / `statsmodels` ile uygulanır (uydurma fonksiyon adı kullanma; betikte gerçek çağrıyı yaz):
+   | Yöntem | Ne zaman | Nasıl |
+   | --- | --- | --- |
+   | Bağımsız iki grup karşılaştırması | İki ayrı grubun sürekli ölçümü; normallik varsa t-testi, yoksa Mann-Whitney U | `scipy.stats` ile |
+   | Eşli iki ölçüm (sürekli) | Aynı birimlerin iki ölçümü | `scipy.stats` ile |
+   | İkiden çok grup | Üç ve daha fazla grup; normallik varsa ANOVA, yoksa Kruskal-Wallis | `scipy.stats` / `statsmodels` ile |
+   | Ki-kare / Fisher | Kategorik değişkenler arası ilişki | `association_test` (kitte var) |
+   | Korelasyon / regresyon | İki sürekli değişken ilişkisi ya da model kurma | `scipy.stats` / `statsmodels` ile |
+   | Cronbach alfa | Ölçek/anket iç tutarlılığı | `scipy.stats` / `statsmodels` ile (ya da elle hesapla) |
+
+   Yöntem seçimi veri türü ve varsayımlara (normallik, varyans homojenliği, eşlilik) göre yapılır; seçilen varsayım testi de betikte kayıtlanır.
 3. Betik `uv run python analysis/scripts/<betik>.py` ile çalıştırılır; yollar `config.PATHS`'ten alınır. Import için çalışma dizinine bağlı `sys.path.insert(0, "tools")` değil, betiğin yerine göre kökten mutlak yol kullanılır:
    ```python
    import sys
@@ -45,12 +57,12 @@ Yollar `tools/config.py` içindeki `PATHS`'ten okunur.
    ```
 4. Çıktı klasörü yazmadan önce oluşturulur: `Path(config.PATHS["analysis_outputs"]).mkdir(parents=True, exist_ok=True)` (ilgili PATHS anahtarıyla).
 5. `analysis/analysis-log.md`'ye tarih, betik, girdi, çıktı, sonuç özeti ve **veri türü (sentetik/gerçek)** yazılır.
-6. Yeni bir yöntem eklenirse elle hesapla karşılaştırma testi yazılır (örnek betikteki `manual_wilson`, `manual_kappa` gibi).
+6. Yeni bir yöntem (kitte hazır olmayan) eklenirse, elle hesapla kütüphane sonucunu karşılaştıran bir test yazılır — `tests/test_stats.py`'deki Wilson/kappa testleri örnek alınır.
 
 ## Sentetik veri ilkesi
-- Sentetik veri yalnız altyapı testinde kullanılır; her satırda bir `synthetic=True` işareti bulunur ve betik bunu `assert` ile doğrular.
+- Sentetik veri yalnız altyapı/akış testinde kullanılır; her satırda bir `synthetic=True` işareti bulunur ve betik bunu `assert` ile doğrular.
 - Sentetik veriyle üretilen hiçbir sayı rapora sonuç olarak girmez. JSON çıktısının başına `"UYARI": "SENTETİK VERİ — gerçek ölçüm sonucu değildir"` yazılır.
-- Örnek, konu-bağımsız sentetik betik `templates/` altına konur; gerçek değer üretmez. Örnek sahte değerler `report/mock-data.json` içindedir (yalnız şablon testi).
+- Gerçek sonuç gelene kadar rapordaki yer tutucu/sahte değerler ayrı tutulur; bunların listesi `report/mock-data.json` içindedir ve `tools/check_report.py` bu değerlerin son rapora sızmadığını denetler (veri demosu değil, yer tutucu bekçisidir).
 
 ## Raporlama kuralları
 - p değeri tek başına verilmez; etki büyüklüğü/oran ve güven aralığı birlikte.

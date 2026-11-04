@@ -38,7 +38,7 @@ def test_holm_duzeltme():
 
 
 def test_mcnemar_test():
-    res = stats.mcnemar_test(10, 2, 8, 10)
+    res = stats.mcnemar_test(both_yes=10, only_a=2, only_b=8, both_no=10)
     assert res["table"] == [[10, 2], [8, 10]]
     assert 0.0 <= res["p"] <= 1.0
 

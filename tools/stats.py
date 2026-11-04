@@ -3,8 +3,8 @@
 Yöntem ↔ kaynak eşlemesi (künyeler sources/library.bib'e eklenir):
     wilson_ci          Wilson (1927)       oranlar için güven aralığı
     holm               Holm (1979)         çoklu karşılaştırma düzeltmesi
-    mcnemar_test       McNemar (1947)      eşli ikili ölçüm değişimi
-    cohen_kappa        Cohen (1960)        iki etiketçi uyumu
+    mcnemar_test       McNemar (1947)      aynı birimlerde eşli iki koşul/yöntem karşılaştırması
+    cohen_kappa        Cohen (1960)        iki değerlendirici/kodlayıcı uyumu
     prf1               —                   precision, recall, F1
     association_test   Chi-square / Fisher kategorik ilişki; seyrek hücrede exact test
 
@@ -64,10 +64,16 @@ def holm(pvalues: list[float], alpha: float = 0.05) -> list[dict]:
     ]
 
 
-def mcnemar_test(both_yes: int, only_old: int, only_new: int, both_no: int) -> dict:
-    """Eşli ikili ölçümlerde değişim için McNemar testi (seyrek durumda exact)."""
-    table = [[both_yes, only_old], [only_new, both_no]]
-    exact = (only_old + only_new) < 25
+def mcnemar_test(both_yes: int, only_a: int, only_b: int, both_no: int) -> dict:
+    """Aynı birimlerde eşli iki koşul (ya da iki yöntem/iki ölçüm) için McNemar testi.
+
+    Her birim iki koşulda ikili (evet/hayır) olarak gözlenir. Dört hücre:
+    ``both_yes`` ikisinde de evet, ``only_a`` yalnız A'da evet,
+    ``only_b`` yalnız B'de evet, ``both_no`` ikisinde de hayır.
+    Tutarsız çift az olduğunda (``only_a + only_b < 25``) exact test kullanılır.
+    """
+    table = [[both_yes, only_a], [only_b, both_no]]
+    exact = (only_a + only_b) < 25
     res = mcnemar(table, exact=exact, correction=not exact)
     return {"table": table, "exact": exact, "statistic": float(res.statistic), "p": float(res.pvalue)}
 

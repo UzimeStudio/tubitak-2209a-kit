@@ -29,6 +29,7 @@ Başvurunun biçimsel nedenle sorun yaşamasını önlemek. İçerik kararı ver
 | Marka/firma öne çıkarma yasağı | `brand_ban` |
 | Öneri dili Türkçe + TÜBİTAK formatı (aksi hâlde ön elemede elenir) | `language` |
 | ÜYZ beyanının yeri (rehber ayrılmış bölüm ister; ekranda görülmezse BİDEB/danışmana sorulur) | `ai_disclosure.note` |
+| TYBS içerik girişi (Resim Yükle/Tablo/Özel karakter butonları, denklem, yapıştırmada biçim bozulması) + "Proje Önerisini Önizle" | `tybs_input` |
 
 ## Prosedür
 1. Biçim denetimi çalıştırılır; sonuç kullanıcıya tablo olarak verilir:
@@ -36,7 +37,7 @@ Başvurunun biçimsel nedenle sorun yaşamasını önlemek. İçerik kararı ver
    uv run python tools/check_application.py --tybs
    ```
 2. Sınıra yakın değerler (Özet üst sınıra yakınsa, bölüm alt sınıra yakınsa) elle doğrulanır; TYBS'nin sayım yöntemi bilinmiyor.
-3. Markdown → TYBS hazırlığı: bağlantılar düz metin atıfa çevrilir (`[Soyad (2023)](https://doi.org/…)` → `Soyad (2023)`); uyarı blokları normal paragraf olur; tablolar TYBS tablo aracıyla yeniden kurulur; 3.1/3.3/4 TYBS'de tablo veya sabit kategori biçimindedir.
+3. Markdown → TYBS hazırlığı (rules `tybs_input`): bağlantılar düz metin atıfa çevrilir (`[Soyad (2023)](https://doi.org/…)` → `Soyad (2023)`); uyarı blokları normal paragraf olur; tablolar TYBS "Tablo" aracıyla yeniden kurulur (genişlikler "tablo/hücre özellikleri"nden ayarlanır); görseller "Resim Yükle" ile eklenir; özel karakterler ve matematiksel semboller "Özel karakter" menüsünden; denklemler özel karakterle yazılır ya da ekran görüntüsü olarak eklenir; başka ortamdan yapıştırmada biçim bozulabileceği için bu araçlarla yeniden kurulur; 3.1/3.3/4 TYBS'de tablo veya sabit kategori biçimindedir.
 4. Kaynakça satırları üretilir ve TYBS Kaynaklar alanına tek tek girilir:
    ```bash
    uv run python tools/bibkit.py list
@@ -44,7 +45,7 @@ Başvurunun biçimsel nedenle sorun yaşamasını önlemek. İçerik kararı ver
    Kaynak kaydında olmayan bir DOI kullanıcıya önce bildirilir.
 5. Öneri Türkçe ve TÜBİTAK formatında mı doğrulanır (rules `language`); Türkçe/format dışı metin ön elemede eleneceği için uyarılır.
 6. ÜYZ beyanı için `ai-research-compliance`. ÜYZ Rehberi beyanı sistemdeki ayrılmış bölümde ister (rules `ai_disclosure.note`); 2026 ekranında bu alan görülmediyse yeri BİDEB'e/danışmana sorulur, uydurulmaz.
-7. Önizleme ("Araştırma Önerisini Önizle") ekip tarafından yapılır; bu skill TYBS'ye giriş yapmaz, form göndermez.
+7. Önizleme ("Proje Önerisini Önizle" / "Araştırma Önerisini Önizle", rules `tybs_input`): eklenen tüm içerik onay öncesi önizlenir; eksik/hatalı içerik (bozulan biçim, kaybolan görsel/tablo/sembol) olmadığından emin olunduktan sonra onaylanır. Önizleme ekip tarafından yapılır; bu skill TYBS'ye giriş yapmaz, form göndermez.
 
 ## Hata durumları
 - Bölüm başlıkları değişirse betik bölüm bulamaz; başvuru metnindeki başlıklar rules `section_min_chars.sections` ile eşleştirilir.
@@ -53,4 +54,5 @@ Başvurunun biçimsel nedenle sorun yaşamasını önlemek. İçerik kararı ver
 ## Kalite kontrol
 - [ ] Betik çıktısındaki tüm kurallar "uygun".
 - [ ] Ekip/danışman bilgisi gerçek bilgiyle girildi (taslakta `TBD` kalmadı).
-- [ ] Başvuru önizlemesi ekip tarafından yapıldı.
+- [ ] Görsel/tablo/özel karakter TYBS araçlarıyla kuruldu; yapıştırmada biçim bozulması kontrol edildi (rules `tybs_input`).
+- [ ] Başvuru önizlemesi ("Proje Önerisini Önizle") ekip tarafından yapıldı.

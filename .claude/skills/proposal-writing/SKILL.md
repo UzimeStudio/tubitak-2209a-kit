@@ -57,6 +57,14 @@ kuralları `config.rules()` üzerinden okunur; aşağıdaki değerler 2026 örne
   metindeki her kaynağa atıf (`references.all_cited`). Yaygın hata: atıfsız
   kaynak ya da kaynaksız atıf.
 
+## Hakemin baktığı yer
+
+Her bölümü yazmadan önce iki kaynağa bak:
+- rules dosyasındaki `section_requirements.<bölüm>`: TÜBİTAK'ın o bölümde istediği içerik (resmî).
+- `project/writing-guide.md`: o bölümde hakemin aradığı, sık hata, zayıf → güçlü cümle örneği.
+
+Yazdıktan sonra `uv run python tools/check_writing.py <md>` çalıştır. Uyarıları tek tek değerlendir: her uyarı hata değildir, ama gerekçesiz bırakma.
+
 ## Atıf kuralı
 Atıf **yalnız** `sources/references.json`'daki doğrulanmış kayıtlardan yapılır:
 status `bibkit.USABLE` kümesinde (VERIFIED, PARTIAL, PUBLISHER_PAGE) olanlar.

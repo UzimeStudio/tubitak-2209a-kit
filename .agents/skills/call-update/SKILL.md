@@ -34,6 +34,13 @@ Yalnız `tubitak.gov.tr` alan adından belge indirilir/okunur. Başka kaynaktan 
    - `budget.excluded_items` ve `budget.iban` — bütçe dışı kalemler ve IBAN koşulu (T02 §2.1.2, T01).
    - `withdrawal` — başvuru geri çekme süresi (T02 §4.3.5).
    - `acknowledgement` — TÜBİTAK desteği beyanı ve logo zorunluluğu (T02 §6.6, T01).
+   - `section_requirements` — her bölümün (1.1/1.2/2./3.1/3.2/3.3/4.) içerik yükümlülükleri (T03).
+   - `pre_screening` — ön inceleme/ret nedenleri (T02 §5.1.1, §5.1.2, §4.3.1, §4.2.4).
+   - `monitoring` — yürürlük sonrası izleme kuralları: demirbaş envanter, fatura/isim, danışman/ortak değişikliği, son 3 ay kilidi, sonuç raporu gecikmesi (T02 §6.2–§6.13).
+   - `tybs_input` — TYBS içerik giriş araçları ve önizleme (T03).
+   - `ethics` — intihal tanımı (AYEK Md. 9/1-c), uydurma/çarpıtma, sahte kaynak, benzerlik kontrolü; dilimleme için resmî madde yoksa "bulunamadı" notu korunur (T02 §5.3.2, T05 §1.3.2/§1.3.3/§1.1.2).
+   - `ai_use` — nihai sorumluluk, doğrulama, beyan eşiği, yasak kullanımlar, görsel belirtimi, gizlilik, taslak nihai değil (T05 §1).
+   - `evaluation.cutoff_note` — taban puanın yayımlanmaması ve alana göre ayrı belirlenebilmesi (T02 §5.2.3, §5.3.2).
    TYBS ekranına dayanan ve resmî belgede karşılığı olmayan değerlerin (`title.max_chars`, `keywords`, `references.max_chars`) `source`'u "TYBS ekranı (resmî belgede yok)" olarak kalır. Her alanın `source` değeri doğrulandığı belge kimliğine (ör. `T02 §2.2`) güncellenir. Doğrulanamayan değer taşınmaz; `null` bırakılır ve `logs/open-questions.md`'ye yazılır.
 5. `sources[]` listesindeki her belgenin güncel `url` ve `sha256_16` değeri yazılır.
 6. Proje yeni dosyaya bağlanır: `project.json` `call.rules_file` = `2209a-<yıl>.json`.
@@ -50,7 +57,7 @@ Yalnız `tubitak.gov.tr` alan adından belge indirilir/okunur. Başka kaynaktan 
 
 ## Kalite kontrol
 - [ ] Yeni rules dosyasındaki her değerin `source` alanı güncel bir belge kimliğine dayanıyor (TYBS ekranına dayananlar "TYBS ekranı (resmî belgede yok)" olarak işaretli).
-- [ ] `eligibility`, `language`, `ethics`, `evaluation`, `budget.excluded_items`/`budget.iban`, `withdrawal`, `acknowledgement` blokları da madde numarasıyla yeniden doğrulandı.
+- [ ] `eligibility`, `language`, `ethics`, `evaluation` (+ `cutoff_note`), `budget.excluded_items`/`budget.iban`, `withdrawal`, `acknowledgement`, `section_requirements`, `pre_screening`, `monitoring`, `tybs_input`, `ai_use` blokları da madde numarasıyla yeniden doğrulandı.
 - [ ] Her indirilen belgenin SHA'sı `sources` listesine yazıldı.
 - [ ] `project.json` yeni rules dosyasını gösteriyor; `config.py` hatasız okuyor.
 - [ ] Yalnız tubitak.gov.tr'den indirildi.

@@ -75,6 +75,12 @@ uv run python tools/check_consistency.py
 
 TYBS kopyası varsa `--tybs` ile o da denetlenir. Her komutu ayrı çalıştır ve çıkış kodunu ayrı oku.
 
+```bash
+uv run python tools/check_writing.py report/drafts/proposal.md
+```
+
+Yazım uyarıları plan tablosuna "dil" veya "yöntem" türüyle girer. Bölüm bölüm beklentiler: `project/writing-guide.md`.
+
 ### 5. İçerik denetimi
 
 Sırayla şu skill'leri uygula:

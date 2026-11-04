@@ -1,0 +1,65 @@
+{
+  "_note": "check_writing.py desenleri. Hakemlerin sık şikayet ettiği yazım sorunlarını yakalar. Her desen 'source' ile gerekçeye bağlanır. Tüm bulgular UYARI düzeyindedir; metin yine de bağlama göre doğru olabilir. pattern alanları Python re (regex) sözdizimindedir, büyük/küçük harf duyarsız (IGNORECASE) derlenir. sections boşsa tüm bölümlerde aranır; doluysa yalnız başlığı o öneklerle eşleşen bölümlerde.",
+  "source": "TÜBİTAK Proje Yazma Eğitimi (panel tespitleri) + ARDEB ön-inceleme + NSF/Horizon değerlendirme ölçütleri; alt yazım kuralı kaynakları aşağıda.",
+  "patterns": [
+    {
+      "id": "belirsiz-katki",
+      "pattern": "katk[ıi]\\s+sa[gğ]la(?:yacak(?:t[ıi]r)?|r)|fayda\\s+sa[gğ]la(?:yacak(?:t[ıi]r)?|r)|b[üu]y[üu]k\\s+[öo]nem\\s+ta[şs][ıi](?:maktad[ıi]r|r)|literat[üu]rde\\s+ilk|hi[çc]\\s+[çc]al[ıi][şs][ıi]lmam[ıi][şs]",
+      "message": "Belirsiz katkı/önem iddiası — gerekçesiz 'katkı sağlayacaktır', 'büyük önem taşımaktadır', 'literatürde ilk' gibi ifadeler hakemlerce boş bulunur.",
+      "suggestion": "İddiayı somut kanıta bağlayın: hangi boşluğu, hangi ölçülebilir çıktıyla kapattığınızı yazın (ör. 'X yöntemini Y koşulunda ilk kez sınar').",
+      "sections": [],
+      "source": "TÜBİTAK Proje Yazma-2 (özgün değer/panel tespitleri); NSF intellectual merit"
+    },
+    {
+      "id": "belirsiz-yontem",
+      "pattern": "uygun\\s+y[öo]ntemler(?:le|\\s+kullan[ıi]larak)|gerekli\\s+analizler\\s+yap[ıi]lacak",
+      "message": "Belirsiz yöntem ifadesi — 'uygun yöntemlerle', 'gerekli analizler yapılacak' yöntemi somutlaştırmaz.",
+      "suggestion": "Hangi yöntemi, hangi araç/parametreyle, hangi veride uygulayacağınızı adıyla yazın (ör. 'bağımsız örneklem t-testi ile grup farkı sınanır').",
+      "sections": ["2.", "Yöntem"],
+      "source": "TÜBİTAK Proje Yazma-2 (yöntem bölümü ayrıntı beklentisi)"
+    },
+    {
+      "id": "risk-inkari",
+      "pattern": "risk\\s+(?:[öo]ng[öo]r[üu]lmemektedir|bulunmamaktad[ıi]r|yoktur)",
+      "message": "Risk inkarı — 'risk öngörülmemektedir' hakemde B planı eksikliği izlenimi bırakır.",
+      "suggestion": "Gerçekçi bir risk tanımlayıp B planını yazın; tercihen aynı hedefe başka yoldan ulaştıran bir plan.",
+      "sections": [],
+      "source": "TÜBİTAK Proje Yazma-2 (B planı beklentisi, panel tespitleri)"
+    },
+    {
+      "id": "iyimser-vaat",
+      "pattern": "zaman[ıi]nda\\s+ve\\s+ba[şs]ar[ıi]yla\\s+tamamlan(?:acak(?:t[ıi]r)?|m[ıi][şs])",
+      "message": "Aşırı iyimser vaat — 'zamanında ve başarıyla tamamlanacaktır' ölçülebilir bir taahhüt değildir.",
+      "suggestion": "Yerine ölçülebilir başarı ölçütü koyun (ör. 'doğruluk ≥%90' veya 'N≥450 başarılı ölçüm').",
+      "sections": [],
+      "source": "TÜBİTAK Proje Yazma-2 (gerçekçi iş takvimi/başarı ölçütü)"
+    }
+  ],
+  "abstract_scope_hints": {
+    "_note": "Özet'in rules abstract.scope'taki 4 kapsamından her birinin metinde en az bir ipucu sözcüğü bulunması beklenir. Sözcükler normalize edilmiş (küçük harf) metinde aranır; kısmi eşleşme yeterlidir (ör. 'yöntem' → 'yöntemle').",
+    "bilimsel nitelik": ["özgün", "literatür", "boşluk", "katkı", "bilimsel", "yenilik", "hipotez", "amaç"],
+    "yöntem": ["yöntem", "ölçüm", "analiz", "deney", "örneklem", "veri", "protokol", "test"],
+    "proje yönetimi": ["iş paketi", "takvim", "ay", "ekip", "sorumlu", "başarı ölçütü", "aşama"],
+    "yaygın etki": ["etki", "çıktı", "yarar", "açık kaynak", "yayın", "topluma", "ekonomi", "kazanım"]
+  },
+  "success_metric_number": {
+    "_note": "3.1 çalışma takvimi başarı ölçütü hücresinde katkı yüzdesi (%N) dışında ölçülebilir öğe arayan desen. Hücredeki son '%N' katkı payıdır ve çıkarılır; kalan metinde bu desenlerden biri yoksa 'ölçülemeyen başarı ölçütü' uyarısı verilir.",
+    "pattern": "\\d+[.,]?\\d*\\s*%|%\\s*\\d+|\\d+[.,]?\\d*\\s*(?:ay|adet|site|kez|puan|saat|g[üu]n|hafta)|\\b\\d{4}\\b|e[şs]ik|en\\s+az\\s+\\d|en\\s+fazla\\s+\\d|≥|≤|kappa|F1|cronbach",
+    "source": "TÜBİTAK Proje Yazma-2 (başarı ölçütü ve önem ağırlıkları); TYBS formu"
+  },
+  "objectives_measurable": {
+    "_note": "1.2 bölümünde en az bir ölçülebilir öğe (sayı, ay, eşik, %) aranır. Hiç yoksa uyarı.",
+    "pattern": "\\d+[.,]?\\d*\\s*%|%\\s*\\d+|\\b\\d+\\s*(?:ay|adet|site|kez|puan|saat|g[üu]n|hafta)\\b|\\beşik\\b|en\\s+az\\s+\\d|en\\s+fazla\\s+\\d|≥|≤|\\b\\d{2,}\\b",
+    "source": "TÜBİTAK Proje Yazma-1 (SMART hedef); uluslararası ölçütler"
+  },
+  "citation": {
+    "_note": "1.1 bölümünde basit atıf aranır: 'Soyad (2020)', '(Soyad, 2020)', 'Soyad vd.'. Hiçbiri yoksa 'literatüre atıf yok' uyarısı.",
+    "pattern": "[A-ZÇĞİÖŞÜ][\\wçğıöşü]+\\s*\\((?:19|20)\\d{2}\\)|\\([A-ZÇĞİÖŞÜ][\\wçğıöşü]+(?:\\s+vd\\.)?,?\\s*(?:19|20)\\d{2}\\)|[A-ZÇĞİÖŞÜ][\\wçğıöşü]+\\s+vd\\.",
+    "source": "TÜBİTAK Proje Yazma-2 (güncel, metinle ilişkili kaynak); ARDEB ön-inceleme"
+  },
+  "long_sentence_words": {
+    "_note": "Bölüm başına kelime sayısı bu eşiği aşan cümle sayısı raporlanır. Cümle sınırı . ! ? ve satır sonundan belirlenir.",
+    "max_words": 40,
+    "source": "Genel akademik yazım; TÜBİTAK 'akıcı, anlaşılır dil' beklentisi"
+  }
+}

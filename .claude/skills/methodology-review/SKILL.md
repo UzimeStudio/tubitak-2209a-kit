@@ -27,6 +27,18 @@ Yöntem/çalışma takvimi bölümü yazılırken veya değiştirilirken; başar
 | Veri analizi | Veri kaynağı ve kalitesi, birim, eksik veri, uygun test seçimi, çoklu karşılaştırma düzeltmesi, etki büyüklüğü + güven aralığı |
 | Tasarım/üretim | Gereksinim–ölçüt eşlemesi, prototip değerlendirme yöntemi, kullanıcı testi, kabul ölçütleri |
 
+## Proje türüne göre sık eksikler (`project/writing-guide.md`)
+
+| Tür | Sık eksik |
+| --- | --- |
+| Anket / ölçek | Örneklem yöntemi ve büyüklük gerekçesi, ölçeğin geçerlik-güvenirliği, etik kurul onayı |
+| Laboratuvar deneyi | Tekrar sayısı, kontrol grubu, cihazın kurumda var olduğu, ön deneme |
+| Yazılım / prototip | İş paketinin somut çıktısı, test ve doğrulama yöntemi, karşılaştırma ölçütü |
+| Saha çalışması | Erişim izni, mevsim/zaman riski, B planı |
+| Sosyal bilim | Kuramsal çerçeve, veri toplama aracı, yorum ile bulgunun ayrımı |
+
+Resmî beklenti: yöntem literatüre atıfla gerekçelenir; tasarım, değişkenler ve istatistik yöntemi yazılır; ön çalışma varsa verilir; yöntem takvimle ilişkilendirilir (rules `section_requirements.2.`).
+
 ## Genel denetim listesi
 | Konu | Kontrol |
 | --- | --- |

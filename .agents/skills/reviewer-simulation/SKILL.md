@@ -66,6 +66,14 @@ kaynağını belirt.
 | Proje yönetimi | | | | |
 | Yaygın etki | | | | |
 
+## Ölçüt başına kontrol listesi
+
+Puan vermeden önce her ölçüt için kontrol listesi kur:
+- Resmî alt maddeler: rules `section_requirements` (1.1, 1.2 → bilimsel nitelik; 2. → yöntem; 3.1–3.3 → proje yönetimi; 4. → yaygın etki).
+- Uygulamadaki beklenti: `project/writing-guide.md` "Hakemin aradığı" sütunu.
+
+Her maddeyi var / zayıf / yok diye işaretle ve metinden yer göster. Puanı bu işaretlerden türet. Ağırlıklar rules `evaluation` bloğundan okunur. Taban puan yayımlanmadığı için (`evaluation.cutoff_note`) "geçer/kalır" deme; en zayıf ölçütü göster.
+
 ## Reddedilme nedeni olabilecek ilk 5 sorun
 Önem sırasıyla, her biri için: sorun · neden reddettirir · nasıl giderilir.
 Bunları metindeki gerçek kanıta dayandır; genel tavsiye verme.

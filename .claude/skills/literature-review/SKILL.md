@@ -25,7 +25,7 @@ Tek bir kaynağın içeriğini, yalnız metinde yazanla ve kendi cümlelerimizle
    - Sayılar metindeki gibi aktarılır; yuvarlanmaz, yorumlanmaz.
    - Yazarların nitelemesi korunur (ör. "şüpheli" niteleme "kesin" yapılmaz).
    - Okunmayan alan için "TAM METİN OKUNMADI" yazılır.
-   - "Projeyle ilişkisi" sütununda kaynağın projenin hangi alt sorusu/bileşeniyle bağlandığı yazılır; bölge/hukuk/bağlam farkı belirtilir ve yerel bağlama genellenmez.
+   - "Projeyle ilişkisi" sütununda kaynağın projenin hangi alt sorusu/bileşeniyle bağlandığı yazılır; bağlam/popülasyon/ölçüm koşulu farkı (dış geçerlik) belirtilir ve bulgu başka koşullardaki örnekleme körü körüne genellenmez.
    - "Satırı hazırlayan / tarih" sütununa ÜYZ katkısı yazılır.
 6. Matrix aracıyla satır eklenir ve doğrulanır:
    ```bash
@@ -37,7 +37,7 @@ Tek bir kaynağın içeriğini, yalnız metinde yazanla ve kendi cümlelerimizle
 ## Özet yazım kuralları
 - Doğrudan alıntı yerine özgün Türkçe özet; alıntı gerekirse tırnak + sayfa.
 - Özet kaynağın yerine geçecek uzunlukta olmaz.
-- Bulgu başka bölge/hukuktaysa yerel bağlama genellenmez.
+- Bulgu farklı bir bağlamda/popülasyonda/ölçüm koşulunda elde edilmişse bu fark belirtilir; sonuç projenin kendi koşullarına körü körüne genellenmez (dış geçerlik).
 
 ## Hata durumları
 - PDF erişimi yok: satır "TAM METİN OKUNMADI" ile açılabilir ama bulgu/sınırlılık sütunları özetten doldurulmaz.

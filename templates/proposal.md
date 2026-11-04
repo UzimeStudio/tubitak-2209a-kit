@@ -17,7 +17,9 @@ meta: Bu belge bir araştırma önerisidir; ölçüm/deney sonucu içermez.
 - Değeri bilinmeyen her yere `TBD` yazın ve `logs/open-questions.md` dosyasına
   ekleyin. Uydurmayın.
 - Kalite çıtası: iddialar kaynaklı; plan ile sonuç ayrı; abartı/rakipsizlik
-  iddiası yok; teknik kanıt ile hukuki/uzman değerlendirmesi ayrı tutulur.
+  iddiası yok; ölçüm/gözlem ile yorum/çıkarım ayrı tutulur.
+- Her bölümün hakem bakışı için `project/writing-guide.md`'ye bakın: her bölümde
+  hakemin aradığı, sık hata ve zayıf→güçlü cümle örneği oradadır.
 -->
 [[TOC]]
 
@@ -28,6 +30,7 @@ meta: Bu belge bir araştırma önerisidir; ölçüm/deney sonucu içermez.
 NE YAZILIR: Problemi, amacı, yöntemi, örneklem/kapsamı, beklenen çıktıları ve
 çalışmanın sınırını tek akışta özetleyin. Dört ekseni kapsayın: bilimsel
 nitelik, yöntem, proje yönetimi, yaygın etki.
+HAKEM BAKIŞI: önem + amaç + yöntem + etki tek akışta görünsün (writing-guide Özet).
 SINIR (rules `abstract`): kelime min/max arası (2026: 25–450 kelime).
 SIK HATA: sonuç gibi yazmak (plan dili kullanın); sınır dışı uzunluk; çözümü
 "ilk/rakipsiz" diye sunmak.
@@ -52,17 +55,18 @@ TBD
 ## 1.2. Kuramsal/teknik çerçeve ve sınır
 <!--
 NE YAZILIR: Çalışmanın dayandığı kaynaklar/kurallar ve neyin kapsam DIŞI
-olduğu. Teknik gözlem ile değerlendirme (hukuki/uzman) ayrımını net koyun.
+olduğu. Ölçüm/gözlem ile yorum/çıkarım ayrımını net koyun.
+HAKEM BAKIŞI: alanı tanıyor musun, boşluk gerçek mi (writing-guide 1.1).
 SINIR (rules `section_min_chars`): en az N karakter (2026: 350).
-SIK HATA: kanıtı doğrudan hüküm/sonuç saymak; belirsiz ve ölçülemeyen durumları
+SIK HATA: ölçümü doğrudan sonuç/hüküm saymak; belirsiz ve ölçülemeyen durumları
 tanımlamamak.
 -->
 TBD
 
-> TBD (tek bir gösterge/ölçüm tek başına kesin hüküm sayılmaz; "belirsiz" ve "ölçülemedi" durumları ayrı tutulur notu buraya.)
+> TBD (tek bir gösterge/ölçüm tek başına kesin sonuç sayılmaz; "belirsiz" ve "ölçülemedi" durumları ayrı tutulur notu buraya.)
 
 ## 1.3. Yaklaşımın gerekçesi
-<!-- NE YAZILIR: Seçtiğiniz tasarımın (ör. izinli örneklem, belirli yöntem) gerekçeleri ve bedeli (ör. temsil gücü). SIK HATA: bedeli gizlemek. -->
+<!-- NE YAZILIR: Seçtiğiniz tasarımın (ör. örneklem yöntemi, belirli ölçüm) gerekçeleri ve bedeli (ör. temsil gücü). SIK HATA: bedeli gizlemek. -->
 TBD
 
 # 2. Literatür

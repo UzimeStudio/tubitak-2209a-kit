@@ -22,13 +22,25 @@ description: TÜBİTAK Üretken Yapay Zekâ (ÜYZ) Rehberi ve 2209-A çağrısı
 - **Sorumluluk**: her çıktı (metin, veri, kod, reference) doğrulanır; uydurma/çarpıtma/aşırma akademik etik ihlalidir.
 - **Beyanın yeri**: ÜYZ Rehberi (T05 §1.2.2) beyanın TÜBİTAK çevrimiçi başvuru sisteminde bu amaçla ayrılmış bölümde yapılmasını ister. rules `ai_disclosure.note`, 2026 TYBS ekranında böyle bir serbest beyan alanının görülmediğini (yalnız ÜYZ Kaynakça Taahhütnamesi) bir gözlem olarak kaydeder. Bu iki şeyi ayrı tut: rehberin istediği beyan yükümlülüğü ile ekranda fiilen görülen alan aynı değildir; alanın yeri netleşmiyorsa BİDEB'e veya danışmana sorulur, uydurulmaz.
 
+## ÜYZ kullanım yükümlülük ve yasakları (rules `ai_use`, T05 §1)
+Her ÜYZ oturumunda ve beyan hazırlanırken bu maddeler uygulanır:
+- **Nihai sorumluluk** (`ai_use.final_responsibility`): tüm bilgi/veri/analiz/iddia/referansın doğruluğundan başvuru sahibi tek başına sorumludur; ÜYZ kullanımı sorumluluğu azaltmaz/kaldırmaz/devretmez.
+- **Doğrulama yükümlülüğü** (`ai_use.verification_duty`): halüsinasyon riski nedeniyle her çıktı (metin/veri/kod/referans) titizlikle doğrulanır.
+- **Beyan eşiği** (`ai_use.declaration_threshold`): "önemli ölçüde kullanım" (taslak, kod, veri analizi, görsel, ana argümanı destekleyen içerik) beyan edilir; salt dilbilgisi/yazım denetimi ve dil-üslup iyileştirmesi beyan eşiğinin altındadır.
+- **Yasak kullanımlar** (`ai_use.prohibited_uses`): ÜYZ ile veri/sonuç uydurma (fabrikasyon), çarpıtma (falsifikasyon), aşırma (intihal) kesinlikle yasaktır (AYEK ihlali).
+- **Görsel belirtimi** (`ai_use.visual_disclosure`): ÜYZ ile üretilen görsellerin yapay zekâ ile oluşturulduğu şeffaflıkla belirtilir.
+- **Gizlilik** (`ai_use.confidentiality`): gizli, kişisel (KVKK) veya yayımlanmamış veriler ÜYZ araçlarına girilmez/yüklenmez.
+- **Taslak nihai değil** (`ai_use.draft_not_final`): ÜYZ taslağı yalnız başlangıç noktasıdır; içerik ekibin kendi bilgi ve analiziyle özgün kurulur.
+
 ## Prosedür
 1. Her ÜYZ oturumundan sonra `logs/ai-use-log.md`'ye satır eklenir: tarih · araç/sürüm · aşama/bölüm · nitelik · çıktı dosyası · insan doğrulaması (kim/ne zaman). Araç sürümü bilinmiyorsa "sürüm kaydedilmedi" yazılır, uydurulmaz.
-2. Yasaklar (her istekten önce kontrol):
-   - Veri, ölçüm, deney sonucu veya kaynak uydurmak.
+2. Yasaklar (her istekten önce kontrol; rules `ai_use.prohibited_uses`/`confidentiality`):
+   - Veri, ölçüm, deney sonucu veya kaynak uydurmak (fabrikasyon); mevcut veri/sonucu çarpıtmak (falsifikasyon); aşırma (intihal).
    - Yapılmamış işi yapılmış göstermek; hedefi sonuç gibi yazmak.
    - Danışman/uzman incelemesi yapılmış gibi yazmak.
-   - Gizli proje verisini veya kişisel veriyi dış servise göndermek.
+   - Gizli, kişisel (KVKK) veya yayımlanmamış proje verisini dış ÜYZ servisine göndermek.
+   - ÜYZ ile üretilen görseli, yapay zekâ ile oluşturulduğu belirtilmeden kullanmak.
+   - ÜYZ taslağını doğrulamadan/özgünleştirmeden nihai metin saymak.
 3. ÜYZ'nin ürettiği her künye `source-verification`'dan, her sayı kaynağından, her kod testten geçer.
 4. Beyan taslağı istendiğinde yalnız `logs/ai-use-log.md`'de gerçekten kayıtlı kullanımlardan derlenir; ekip ve danışman onayına sunulur, sisteme ekip girer.
 5. Metinde ÜYZ'den doğrudan alınan ifade varsa alıntı gibi işaretlenir.

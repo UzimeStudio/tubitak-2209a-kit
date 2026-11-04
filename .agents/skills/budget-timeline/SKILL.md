@@ -31,6 +31,15 @@ Bütçe kalemlerini ve Çalışma Takvimini çağrının izin verdiği biçimde,
 - Her iş adımı: ay aralığı, sorumlu kişi(ler), ölçülebilir başarı ölçütü taşır. Başarı ölçütü katkıları toplamı `work_plan.contribution_total` (2026: 100) olur.
 - Yasak iş adımları (`work_plan.forbidden_steps`): literatür tarama, sonuç raporu, sonuçların paylaşımı, malzeme alımı ayrı iş adımı olamaz.
 
+## Hakemin bütçe ve takvimde aradığı (`project/writing-guide.md`)
+
+- Her kalem bir iş paketine bağlı ve gerekçeli. "Sarf: 5.000 TL" yetmez; neyin, kaç adet, hangi iş paketi için alındığı yazılır.
+- Fiyatlar KDV dahil, gerçek teklif veya proformaya dayalı. Döviz bağlı alımda kur artışı payı düşünülür.
+- Burs, maaş veya ücret izlenimi veren kalem yoktur. Bütçe dışı kalemler rules `budget.excluded_items`'tadır.
+- Demirbaş alınacaksa proje sonunda envantere kaydedilir (rules `monitoring`).
+- Her iş paketinin başarı ölçütü sayısaldır (adet, oran, eşik, tarih) ve katkı ağırlığı vardır. `tools/check_writing.py` ölçülemeyen ölçütü uyarır.
+- Takvim ekibin ve altyapının kaldırabileceği kadardır; süre gereğinden uzun tutulmaz.
+
 ## Prosedür
 1. Yöntem okunur; her bütçe kalemi bir iş adımına ve ihtiyaca bağlanır. Fiyat teklifi yoksa tutar `TBD`.
 2. İş paketleri ay aralığı, sorumlu, ölçülebilir başarı ölçütü ve katkı payıyla yazılır; katkı toplamı kontrol edilir.

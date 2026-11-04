@@ -18,8 +18,10 @@ Erişim / son doğrulama tarihi: **2026-11-03** (her doğrulamada güncelleyin).
 | T05 | Üretken Yapay Zekâ Rehberi v04 | ÜYZ beyan ve sorumluluk (§1.2.2, s.12) | FDFE5238DD7C773E | 2026-11-03 |
 | T06 | Bibliyografik Verilerin Düzenlenmesi | Kaynakça biçim kuralı | — (HTML) | 2026-11-03 |
 | T07 | Sonuç Raporu Formatı | Resmî DOCX şablon yapısı | 8401F2AE6E0E8D08 | 2026-11-03 |
+| T08 | [Proje Yazma Eğitimi Bölüm 1](https://www.tubitak.gov.tr/sites/default/files/proje_yazma_egitimi-1._bolum.pdf) | Genel TÜBİTAK proje yazma rehberi (2209-A'ya özgü değil); https erişilebilir (200, application/pdf) | CFB2CB35621BBFCD | 2026-11-04 |
+| T09 | [Proje Yazma Eğitimi Bölüm 2](https://www.tubitak.gov.tr/sites/default/files/proje_yazma_egitimi-2._bolum.pdf) | Genel TÜBİTAK proje yazma rehberi (2209-A'ya özgü değil); https erişilebilir (200, application/pdf) | 8D844CA430D04BB5 | 2026-11-04 |
 
-<!-- URL ve varsayılan SHA değerleri rules dosyasında tutulur; burada yalnız erişim/doğrulama durumu izlenir. -->
+<!-- URL ve varsayılan SHA değerleri rules dosyasında tutulur; burada yalnız erişim/doğrulama durumu izlenir. T08/T09 genel rehberdir; kural kaynağı olarak değil, yazım desteği olarak kullanılır. -->
 
 ## Bulgular
 <!--
@@ -51,3 +53,19 @@ veya tutar buraya girmez.
 **Geri çekme (T02 §4.3.5):** Başvuru, çağrı kapanış tarihinden itibaren 1 ay içinde TYBS üzerinden geri çekilebilir. (rules `withdrawal`)
 
 **TÜBİTAK desteği ve logosu (T02 §6.6, T01):** Program çıktılarında ve her türlü duyuru, yayın ve bilimsel etkinlikte TÜBİTAK desteğinin belirtilmesi ve logosunun kullanılması zorunludur. (rules `acknowledgement`)
+
+**Bölüm içerik yükümlülükleri (T03):** Her bölüm (1.1/1.2/2./3.1/3.2/3.3/4.) için istenen içerik maddeleri. 1.1'de konunun kapsamı/sınırları/önemi, literatürdeki eksikliğin nasıl giderileceği (atıfla), araştırma sorusu ve varsa hipotez(ler), varsa 12. Kalkınma Planı/2030 SanTek ilişkisi gerekçesi; 1.2'de açık-ölçülebilir-gerçekçi-ulaşılabilir hedef; 2.'de yöntem (araştırma tasarımı, bağımlı/bağımsız değişken, istatistiksel yöntem), ön çalışma, çalışma takvimiyle ilişki; 3.2'de B Planı (Risk Yönetimi Tablosu) temel hedeften saptırmamalı; 3.3'te mevcut altyapı/ekipman; 4.'te kategorili ve ölçülebilir çıktı. (rules `section_requirements`)
+
+**Ön inceleme ret nedenleri (T02 §5.1.1, §5.1.2, §4.3.1, §4.2.4):** Başvuru koşullarından birini sağlamayan veya süresinde onaylanmayan başvurular bilimsel değerlendirmeye alınmadan elenir; TÜBİTAK formatına/minimum karakter sınırına uymayan başvurular elenir; çevrimiçi başvuru dışında e-posta/posta/faks ile gönderilen belgeler değerlendirmeye alınmaz ve imha edilir; yanıltıcı/gerçeğe aykırı bilgi verenler hukuken sorumludur. (rules `pre_screening`)
+
+**İzleme/sonuçlandırma (T02 §6.2, §6.3, §6.4, §6.5, §6.8, §6.12/§6.13):** Demirbaş alındıysa üniversite envanter kayıt belgesi alınır ve sonuç raporuna eklenmesi zorunludur; faturalar yürütücü ya da ortak adına düzenlenir, isimsiz fişler geçersiz sayılır ve iade istenir; danışman ve ortak değişikliği yazılı onayla yapılır ve ortak sayısı sabit kalır; bitişe 3 aydan az kaldığında ortak/danışman değişiklik talepleri kabul edilmez; sonuç raporu süresinde yüklenmezse veya revizesi kabul edilmezse proje kusura göre yürürlükten kaldırılır veya iptal edilir. (rules `monitoring`)
+
+**TYBS içerik girişi (T03):** Görseller "Resim Yükle", tablolar "Tablo", özel karakterler ve matematiksel semboller "Özel karakter" menüsünden eklenir; denklemler özel karakterle yazılır ya da ekran görüntüsü olarak eklenir; başka ortamdan yapıştırmada biçim bozulabilir; "Proje Önerisini Önizle" ile onay öncesi kontrol edilir. (rules `tybs_input`)
+
+**ÜYZ yükümlülük ve yasakları (T05 §1.3.1, §1.2.1, §1.3.3, §1.1.2, §1.4.4/§1.5.3):** Nihai sorumluluk tamamen başvuru sahibinde; her çıktı (metin/veri/kod/referans) doğrulanır; "önemli ölçüde kullanım" beyan edilir, salt dilbilgisi/yazım denetimi muaftır; ÜYZ ile veri uydurma/çarpıtma/aşırma kesinlikle yasaktır; ÜYZ ile üretilen görseller belirtilir; gizli/kişisel (KVKK) veya yayımlanmamış veriler ÜYZ araçlarına girilmez; ÜYZ taslağı asla nihai metin sayılmaz. (rules `ai_use`)
+
+**Etik genişletme (T02 §5.3.2; T05 §1.3.2/§1.3.3/§1.1.2):** İntihal (Aşırma) AYEK Yönetmeliği Madde 9/1-c; uydurma (Madde 9/1-a, 9/1-b) ve çarpıtma bilimsel yanıltma; ÜYZ'nin ürettiği referanslar sahte olabilir, doğrulanmadan kullanılamaz; destek öncesi benzerlik kontrolü yapılabilir. "Dilimleme" (salami) için 2209-A resmî belgelerinde özel bir madde bulunamadı; en yakın dayanak benzerlik kontrolü ve AYEK'in genel hükümleridir. (rules `ethics`)
+
+**Değerlendirme eşiği (T02 §5.2.3, §5.3.2):** Destek taban (kesme) puanı sayısal olarak yayımlanmaz; taban puan üzerindeki projeler için destek kararı verilir ve kritik/öncelikli alanlara göre taban puan ayrı belirlenebilir. (rules `evaluation.cutoff_note`)
+
+**Genel yazım rehberleri (T08, T09):** "Proje Yazma Eğitimi" Bölüm 1 ve Bölüm 2 genel TÜBİTAK rehberleridir, 2209-A'ya özgü kural kaynağı değildir; yalnız yazım desteği için kullanılır. İkisi de https ile erişilebilir (200, application/pdf).

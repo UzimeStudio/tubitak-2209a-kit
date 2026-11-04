@@ -86,6 +86,23 @@ def _audit_summary() -> dict:
         summary["check_consistency"] = {"problems": len(rep["problems"]), "warnings": len(rep["warnings"])}
     except Exception as e:  # noqa: BLE001
         summary["check_consistency"] = {"status": f"çalıştırılamadı: {e}"}
+    # check_writing: yalnız denetlenecek belge varsa özet satırı ekle.
+    try:
+        import check_writing
+        path = None
+        for key in ("tybs", "proposal"):
+            try:
+                candidate = document(key)
+            except ConfigError:
+                continue
+            if candidate.exists():
+                path = candidate
+                break
+        if path is not None:
+            rep = check_writing.check(path)
+            summary["check_writing"] = {"warnings": len(rep["warnings"])}
+    except Exception as e:  # noqa: BLE001
+        summary["check_writing"] = {"status": f"çalıştırılamadı: {e}"}
     # bibkit lint
     try:
         import bibkit

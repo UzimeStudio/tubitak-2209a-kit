@@ -8,7 +8,17 @@ Bu dosya öneri raporunun TYBS alanlarına YAPIŞTIRILABİLİR biçimidir.
 "2.", "3.1", "Kaynakça". Bu önekleri değiştirmeyin.
 Çağrıya bağlı sınırlar `rules/<year>.json`'dan; parantez içi 2026 örneğidir.
 Değeri bilinmeyen her yere `TBD`.
+Her adımda hakemin aradığı ve sık hatalar: `project/writing-guide.md`.
+Yapıştırmadan önce: `uv run python tools/check_application.py <md> --tybs` ve
+`uv run python tools/check_writing.py <md>`. TYBS'de tabloyu "Tablo", görseli "Resim Yükle",
+özel karakteri "Özel Karakter" düğmesiyle ekleyin; onaydan önce "Proje Önerisini Önizle".
 -->
+
+<!-- ## Başlık: konuyu ve yöntemi söylesin; moda sözcük ("yapay zekâ destekli") içerikte karşılığı yoksa eklenmez. -->
+<!-- ## Özet: önem, amaç, yöntem, yönetim (takvim) ve yaygın etki kısa birer cümleyle; özet tek başına okunabilmeli. -->
+<!-- ## 3.1: her satırda ölçülebilir başarı ölçütü (adet, oran, eşik, tarih) + katkı yüzdesi. -->
+<!-- ## 3.2: "risk öngörülmemektedir" yazılmaz; her riskin aynı hedefe başka yoldan götüren B planı olur. -->
+<!-- ## 4.: "katkı sağlayacaktır" yerine kim, neyi, nasıl kullanacak; her kategori için ölçülebilir çıktı. -->
 
 ## Başlık
 <!-- TYBS: Araştırma Projesi Bilgileri → Proje Başlığı. SINIR (rules `title`): max_chars (2026: 495). Kurum/firma/ürün/marka öne çıkarılmaz (rules `brand_ban`). -->

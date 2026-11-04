@@ -9,10 +9,11 @@ TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri başvurusu içi
 ## Ne sağlar
 
 - **25 skill**: ajan hangi işte ne yapacağını ve çıtanın nerede olduğunu buradan okur. Claude Code `.claude/skills/`, Codex `.agents/skills/` klasörünü kendiliğinden bulur. İkincisi birincinin kopyasıdır (`tools/sync_skills.py`).
-- **12 çalıştırılabilir araç + ortak kütüphaneler** (`tools/`): komut satırından çalışan araçlar (kaynak doğrulama, kaynakça, biçim denetimi, belgeler arası tutarsızlık, var olan taslağı içe alma, DOCX/PDF üretimi) ve bunların paylaştığı kütüphaneler (`config`, `bibkit`, `docxkit`, `stats`, `figstyle`).
+- **14 çalıştırılabilir araç + ortak kütüphaneler** (`tools/`): komut satırından çalışan araçlar (kaynak doğrulama, kaynakça, biçim denetimi, yazım denetimi, belgeler arası tutarsızlık, var olan taslağı içe alma, DOCX/PDF üretimi, skill eşitleme) ve bunların paylaştığı kütüphaneler (`config`, `bibkit`, `docxkit`, `stats`, `figstyle`).
 - **Hazır promptlar** (`prompts/`): sırayla kopyala-yapıştır.
 - **Çağrı kuralları ayrı dosyada** (`rules/2209a-2026.json`): kelime sınırı, bütçe üst sınırı, tarihler. Her değer resmî belgeye bağlı. Yeni yılda yalnız bu dosya yenilenir.
 - **Şablonlar** (`templates/`): öneri raporu, TYBS'ye yapıştırılacak metin, izin/onam belgeleri.
+- **Yazım rehberi** (`project/writing-guide.md`): bölüm bölüm hakemin aradığı, sık hatalar, zayıf → güçlü cümle örnekleri. Resmî kural ile uygulama önerisi ayrı işaretli. `tools/check_writing.py` bu hataların bir kısmını metinde otomatik bulur.
 
 ## Hızlı başlangıç
 
