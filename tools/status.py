@@ -159,6 +159,12 @@ def main() -> int:
         print(json.dumps(rep, ensure_ascii=False, indent=2))
         return 0
     if "error" in rep:
+        if not config.PATHS["project_config"].exists():
+            # İlk çalıştırmada beklenen durum: hata değil, ilk adımı göster.
+            print("Proje henüz kurulmadı (project.json yok). Bu ilk adımda normal.")
+            print("Sıradaki  : onboarding skill'ini başlat ya da şunu çalıştır:")
+            print("            uv run python tools/init_project.py")
+            return 0
         print(f"HATA: {rep['error']}")
         return 2
     print(f"Proje     : {rep['title'] or '(başlık yok)'}")

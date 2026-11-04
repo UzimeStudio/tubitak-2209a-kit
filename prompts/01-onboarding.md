@@ -7,7 +7,8 @@
 2209-A başvuru kitini ilk kez açıyorum. `onboarding` skill'ini uygula:
 
 1. Ortamı kur ve doğrula: `uv sync`, sonra `uv run python tools/status.py`.
-   Sonucu bana kısaca özetle; hata varsa eksik aracı söyle.
+   Sonucu bana kısaca özetle; hata varsa eksik aracı söyle. İlk açılışta
+   "Proje henüz kurulmadı" yazması normaldir, `project.json` 4. adımda oluşur.
 2. Bana kim olduğumu ve ekibi sor: yürütücü, proje ortakları (varsa), akademik
    danışman. İsim uydurma; bilmediğimi `TBD` bırak.
 3. Araştırma fikrimin netleşip netleşmediğini sor; buna göre beni bir sonraki

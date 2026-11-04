@@ -8,7 +8,7 @@ Gerekenler: Git, [uv](https://docs.astral.sh/uv/) (Python'u kendisi kurar, Pytho
 winget install --id Git.Git -e
 winget install --id astral-sh.uv -e
 # Yeni bir terminal açın
-git clone <bu-repo> my-2209a
+git clone https://github.com/UzimeStudio/tubitak-2209a-kit.git my-2209a
 cd my-2209a
 uv sync
 uv run python tools/init_project.py
@@ -22,7 +22,7 @@ PDF için Word kuruluysa ek bir şey gerekmez. Word yoksa: `winget install --id 
 ```bash
 brew install git uv
 brew install --cask libreoffice     # PDF için
-git clone <bu-repo> my-2209a && cd my-2209a
+git clone https://github.com/UzimeStudio/tubitak-2209a-kit.git my-2209a && cd my-2209a
 uv sync
 uv run python tools/init_project.py
 uv run python tools/status.py
@@ -33,7 +33,7 @@ uv run python tools/status.py
 ```bash
 sudo apt install git libreoffice-writer
 curl -LsSf https://astral.sh/uv/install.sh | sh
-git clone <bu-repo> my-2209a && cd my-2209a
+git clone https://github.com/UzimeStudio/tubitak-2209a-kit.git my-2209a && cd my-2209a
 uv sync
 uv run python tools/init_project.py
 uv run python tools/status.py
@@ -45,7 +45,7 @@ uv run python tools/status.py
 uv run --group dev pytest -q
 ```
 
-Testlerin hepsi geçmeli. LibreOffice yoksa bir test atlanır; bu normaldir.
+Testler 1-2 dakika sürebilir. Hepsi geçmeli. LibreOffice yoksa bir test atlanır; bu normaldir.
 
 ## Ajanı açma
 

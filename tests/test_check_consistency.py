@@ -6,6 +6,8 @@ import json
 
 import config
 
+REPO_ROOT = config.ROOT  # tmp_kit monkeypatch'inden ÖNCE okunur; gerçek repo kökü.
+
 CONSISTENT = """# Belge
 
 ## Başlık
@@ -117,3 +119,29 @@ def test_result_language_warns(tmp_kit):
     _write(tmp_kit, bad, CONSISTENT)
     rep = cc.check()
     assert any("Sonuç dili" in w for w in rep["warnings"])
+
+
+def test_untouched_template_gives_one_note_not_warning_flood(tmp_kit):
+    """Şablondan yeni açılmış taslak: başlık/ekip/anahtar kelime uyarısı yerine tek not."""
+    import check_consistency as cc
+    _set_project(tmp_kit)
+    for name in ("proposal.md", "tybs-application.md"):
+        src = (REPO_ROOT / "templates" / name).read_text(encoding="utf-8")
+        (tmp_kit.paths["templates"] / name).write_text(src, encoding="utf-8")
+    _write(
+        tmp_kit,
+        (tmp_kit.paths["templates"] / "proposal.md").read_text(encoding="utf-8"),
+        (tmp_kit.paths["templates"] / "tybs-application.md").read_text(encoding="utf-8"),
+    )
+    rep = cc.check()
+    assert any("hâlâ boş şablon" in w for w in rep["warnings"])
+    assert not any("geçmiyor" in w for w in rep["warnings"]), rep["warnings"]
+
+
+def test_long_title_truncation_is_marked(tmp_kit):
+    import check_consistency as cc
+    long_title = "Uzun başlık " * 10
+    _set_project(tmp_kit, **{"project.title": long_title.strip()})
+    _write(tmp_kit, CONSISTENT, CONSISTENT)
+    rep = cc.check()
+    assert any("…'" in w for w in rep["warnings"] if "başlığı" in w)

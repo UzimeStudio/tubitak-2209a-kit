@@ -96,3 +96,17 @@ def test_templates_logs_used_when_present(tmp_kit, monkeypatch):
     _run(monkeypatch, ["--defaults"])
     content = tmp_kit.paths["open_questions"].read_text(encoding="utf-8")
     assert "Şablondan" in content
+
+
+def test_interactive_without_terminal_fails_cleanly(tmp_kit, monkeypatch, capsys):
+    """Ajan terminali/pipe: input() EOFError verir; traceback yerine yol gösteren mesaj."""
+    _fresh(tmp_kit)
+
+    def _no_tty(*_args, **_kwargs):
+        raise EOFError
+
+    monkeypatch.setattr("builtins.input", _no_tty)
+    assert _run(monkeypatch, []) == 2
+    err = capsys.readouterr().err
+    assert "--merge values.json" in err
+    assert not tmp_kit.paths["project_config"].exists()  # yarım dosya yazılmadı

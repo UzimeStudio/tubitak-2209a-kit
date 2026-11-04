@@ -108,7 +108,7 @@
   },
   "monitoring": {
     "_note": "Proje yürürlüğe alındıktan sonraki izleme/sonuçlandırma kuralları (sık yürütme hataları).",
-    "demirbas_envanter": "Demirbaş grubuna giren bir ürün alınmışsa üniversiteden alınacak envanter kayıt belgesi alınır ve sonuç raporuna eklenmesi zorunludur.",
+    "inventory_record": "Demirbaş grubuna giren bir ürün alınmışsa üniversiteden alınacak envanter kayıt belgesi alınır ve sonuç raporuna eklenmesi zorunludur.",
     "invoice_rules": "Harcamalar fatura ile belgelendirilir; faturalar proje yürütücüsü ya da ortak adına düzenlenir. Üzerinde isim olmayan fişler geçersiz sayılır ve iade istenir. Fatura asılları TÜBİTAK tarafından istenebilir.",
     "advisor_change": "Proje yürürlüğe alındıktan sonra akademik danışman değişikliği yazılı onayla talep edilir.",
     "partner_change": "Proje yürürlüğe alındıktan sonra proje ortaklarında değişiklik yazılı onayla talep edilir; ortak sayısı sabit kalır.",
@@ -149,14 +149,16 @@
   },
   "evaluation": {
     "criteria_weights": {
-      "bilimsel_nitelik": 35,
-      "yöntem": 25,
-      "proje_yönetimi": 20,
-      "yaygın_etki": 20
+      "scientific_quality": 35,
+      "method": 25,
+      "project_management": 20,
+      "broader_impact": 20
     },
     "special_needs_bonus": "Proje ekibinde özel gereksinimli birey beyanı doğrulanırsa değerlendirme toplam puanına 1 puan eklenir.",
     "cutoff_note": "Destek taban (kesme) puanı sayısal olarak yayımlanmaz; bilimsel değerlendirmede destek taban puanı üzerinde bulunan projeler için destek kararı verilir. 12. Kalkınma Planı ve 2030 Sanayi ve Teknoloji Stratejisi'nde yer verilen kritik/öncelikli alanlara göre destek taban puanı ayrı belirlenebilir.",
-    "source": "criteria_weights: T02 §5.2.1; special_needs_bonus: T02 §4.2.3, §5.2.6; cutoff_note: T02 §5.2.3, §5.3.2"
+    "balanced_distribution": "Desteklenecek projeler seçilirken üniversitelere ve bilim dallarına göre dengeli dağılım gözetilebilir.",
+    "green_economy_financing": "Çevre dostu, sürdürülebilir ve iklim nötr topluma yönelik teknolojik çözüm projelerinde yürütücü kadın ya da uluslararası öğrenci ise proje TÜBİTAK-UNIDO iş birliğindeki 'Türkiye'nin Yeşil Ekonomiye Geçişinde Göçmenlerin Dahil Edilmesini Destekleme Projesi' kapsamında finanse edilebilir.",
+    "source": "criteria_weights: T02 §5.2.1; special_needs_bonus: T02 §4.2.3, §5.2.6; cutoff_note: T02 §5.2.3, §5.3.2; balanced_distribution: T02 §5.2.4; green_economy_financing: T02 §5.2.5"
   },
   "withdrawal": {
     "rule": "Başvuru, çağrı kapanış tarihinden itibaren 1 (bir) ay içinde TYBS üzerinden geri çekilebilir.",
@@ -164,7 +166,22 @@
   },
   "acknowledgement": {
     "rule": "Program kapsamında üretilen çıktılarda ve her türlü duyuru, yayın ve bilimsel etkinlikte TÜBİTAK desteğinin belirtilmesi ve TÜBİTAK logosunun kullanılması zorunludur.",
+    "output_reporting": "Araştırma sonucunda üretilen çıktıların (makale, bildiri, kitap, kitap bölümü vb.) TÜBİTAK'a bildirilmesi ve bilgilerinin BİDEB Başvuru ve İzleme Sistemi'ne yüklenmesi zorunludur.",
     "source": "T02 §6.6, T01"
+  },
+  "opportunities": {
+    "rule": "Projesini tamamlamış ekipteki öğrencilere bazı BİDEB programlarına başvuruda çeşitli imkânlar sunulur.",
+    "programs": ["2224-A Yurt Dışı Bilimsel Etkinliklere Katılımı Destekleme", "2224-B Yurt İçi Bilimsel Etkinliklere Katılımı Destekleme", "2224-D Yurt Dışındaki Bilimsel Eğitim Etkinliklerine Katılımı Destekleme"],
+    "source": "T02 §7"
+  },
+  "legislation": {
+    "documents": [
+      "TÜBİTAK BİDEB Tarafından Yürütülen Programlara İlişkin Yönetmelik",
+      "TÜBİTAK BİDEB Burs ve Destek Programlarının Yürütülmesine İlişkin Usul ve Esaslar",
+      "BİDEB Burs ve Destek Programlarında Başvuruların ve Raporların Panel/Danışman/Danışma Kurulu Yöntemi ile Değerlendirilmesi ve İzlenmesine İlişkin Yönerge"
+    ],
+    "fallback": "Mevzuatta ve çağrı duyurusunda yazmayan durumlarda GYK kararları uygulanır.",
+    "source": "T02 §9.1-§9.4"
   },
   "sources": [
     { "id": "T01", "name": "2209-A program sayfası", "url": "https://tubitak.gov.tr/tr/burslar/lisans-onlisans/destek-programlari/2209-universite-ogrencileri-arastirma-projeleri-destekleme-programi", "sha256_16": null },

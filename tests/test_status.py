@@ -68,3 +68,15 @@ def test_open_questions_none_when_file_missing(tmp_kit):
     # open-questions.md yazılmadı → None
     rep = status.status(today=date(2026, 11, 1))
     assert rep["open_questions"] is None
+
+
+def test_missing_project_json_is_first_step_not_error(tmp_kit, monkeypatch, capsys):
+    """İlk açılışta project.json yok: hata değil, ilk adım gösterilir (çıkış 0)."""
+    import status
+    tmp_kit.paths["project_config"].unlink()
+    config.project.cache_clear()
+    monkeypatch.setattr("sys.argv", ["status.py"])
+    assert status.main() == 0
+    out = capsys.readouterr().out
+    assert "henüz kurulmadı" in out
+    assert "init_project.py" in out

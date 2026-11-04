@@ -317,7 +317,18 @@ def main() -> int:
     base = _example()
     base.pop("_note", None)
     if not defaults:
-        base = _interactive(base)
+        try:
+            base = _interactive(base)
+        except (EOFError, KeyboardInterrupt):
+            # Ajan terminali ya da pipe: soru sorulacak ekran yok. Hiçbir şey yazılmadı.
+            print(
+                "\nHATA: Soru sorulamıyor (etkileşimli terminal yok). project.json yazılmadı.\n"
+                "Değerleri bir JSON dosyasına yazıp şunu çalıştırın:\n"
+                "  uv run python tools/init_project.py --merge values.json\n"
+                "Ya da boş iskelet için: uv run python tools/init_project.py --defaults",
+                file=sys.stderr,
+            )
+            return 2
     try:
         _apply(base)
     except ConfigError as e:

@@ -37,14 +37,14 @@ dosyasından oku, SABİT yazma (2026 örneği: bilimsel nitelik %35 / yöntem %2
 proje yönetimi %20 / yaygın etki %20). Eksen adları `evaluation.criteria_weights`
 anahtarlarıyla, içerikleri `abstract.scope` ile hizalıdır:
 
-1. **Bilimsel nitelik / özgün değer** (`bilimsel_nitelik`) — Soru net, sınanabilir
+1. **Bilimsel nitelik / özgün değer** (`scientific_quality`) — Soru net, sınanabilir
    mi? Boşluk gerçek ve kanıtlı mı? Katkı somut mu, "ilk/rakipsiz" söylemi var mı?
-2. **Yöntem** (`yöntem`) — Tasarım soruyu yanıtlıyor mu? Değişken, örneklem,
+2. **Yöntem** (`method`) — Tasarım soruyu yanıtlıyor mu? Değişken, örneklem,
    analiz tutarlı mı? Vaat edilen her ölçütün karşılığı var mı?
-3. **Proje yönetimi** (`proje_yönetimi`) — Takvim süre üst sınırı içinde gerçekçi
+3. **Proje yönetimi** (`project_management`) — Takvim süre üst sınırı içinde gerçekçi
    mi? İş paketleri, kim-yapar ve katkı payları (toplam 100) tutarlı mı? Risk ve B
    planı inandırıcı mı?
-4. **Yaygın etki** (`yaygın_etki`) — `impact_categories` kategorilerinde etki
+4. **Yaygın etki** (`broader_impact`) — `impact_categories` kategorilerinde etki
    somut ve ölçülü mü, yoksa abartılı mı?
 
 Her eksen için ver:

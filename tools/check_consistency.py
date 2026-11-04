@@ -81,6 +81,21 @@ def _id_defined(text: str, ident: str) -> bool:
     )
 
 
+SKELETON_TEMPLATES = {"proposal": "proposal.md", "TYBS": "tybs-application.md"}
+
+
+def _normalize(text: str) -> str:
+    return re.sub(r"\s+", " ", text.replace("\ufeff", "")).strip()
+
+
+def _is_skeleton(name: str, text: str) -> bool:
+    """Belge, init_project'in açtığı şablonla (boşluk farkı dışında) aynı mı?"""
+    template = config.PATHS["templates"] / SKELETON_TEMPLATES.get(name, "")
+    if not template.is_file():
+        return False
+    return _normalize(text) == _normalize(read_md(template))
+
+
 def _max_month(md: str) -> int | None:
     secs = _sections(md)
     # TYBS'de takvim '3.1', proposal'da '5.1. Çalışma takvimi'. Numara anahtarına
@@ -120,16 +135,24 @@ def check() -> dict:
     tybs = _read(tybs_path)
     docs = [("proposal", proposal), ("TYBS", tybs)]
 
+    # Şablondan yeni açılmış, hiç yazılmamış taslakta içerik denetimi anlamsız:
+    # uyarı yağmuru yerine tek bir bilgi notu verilir. Yer tutucu denetimi sürer.
+    skeletons = {name for name, text in docs if text and _is_skeleton(name, text)}
+    for name in sorted(skeletons):
+        warnings.append(f"{name} hâlâ boş şablon; içerik denetimi yazmaya başlayınca yapılacak")
+    docs_written = [(name, text) for name, text in docs if name not in skeletons]
+
     # 1) başlık
     title = get(p, "project.title")
     if title and title not in EMPTY:
-        for name, text in docs:
+        for name, text in docs_written:
             if text and title not in text:
-                warnings.append(f"project.json başlığı {name} metninde birebir geçmiyor: '{title[:60]}'")
+                shown = title if len(title) <= 80 else title[:80] + "…"
+                warnings.append(f"project.json başlığı {name} metninde birebir geçmiyor: '{shown}'")
 
     # 2) ekip adları
     for person in people():
-        for name, text in docs:
+        for name, text in docs_written:
             if text and person not in text:
                 warnings.append(f"Ekip üyesi '{person}' {name} metninde geçmiyor")
 
@@ -154,7 +177,7 @@ def check() -> dict:
 
     # 5) anahtar kelimeler
     for kw in get(p, "project.keywords", []) or []:
-        for name, text in docs:
+        for name, text in docs_written:
             if text and kw and kw not in text:
                 warnings.append(f"Anahtar kelime '{kw}' {name} metninde geçmiyor")
 

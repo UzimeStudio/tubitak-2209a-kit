@@ -29,11 +29,13 @@ Yalnız proje desteklendikten ve dönem çalışmaları yapıldıktan sonra. Ba�
 2. **Sonuç dürüstlüğü.** Yalnız gerçek ölçüm sonuçları girer; sentetik hiçbir sayı sonuç olmaz. Eşik sağlanmadıysa gerçek değer yazılır. Sınırlılıklar (temsil, tek ölçüm noktası, sınırlar) her sonuçla anılır.
 3. **Harcama.** Harcama kalemleri rules'taki bütçe kalemi adlarıyla ve `project.json budget` ile tutarlı; toplam üst sınırı (rules `budget.max_tl`) aşmaz. Rakamlar uydurulmaz; belge yoksa `TBD` + `logs/open-questions.md`.
 4. **İzleme kuralları (rules `monitoring`).** Yürürlük sonrası kurallar kontrol listesine alınır:
-   - **Demirbaş** (`monitoring.demirbas_envanter`, T02 §6.8): demirbaş (makine/teçhizat) alındıysa üniversiteden alınan envanter kayıt belgesi rapora **ek** olarak eklenir (zorunlu). Belge yoksa açık soru olarak işaretlenir.
+   - **Demirbaş** (`monitoring.inventory_record`, T02 §6.8): demirbaş (makine/teçhizat) alındıysa üniversiteden alınan envanter kayıt belgesi rapora **ek** olarak eklenir (zorunlu). Belge yoksa açık soru olarak işaretlenir.
    - **Fatura** (`monitoring.invoice_rules`, T02 §6.2): faturalar yürütücü ya da ortak adına; isimsiz fişler geçersiz sayılır ve iade istenir; asıllar istenebilir. Harcama tablosu bununla tutarlı olmalı.
    - **Danışman/ortak değişikliği** (`monitoring.advisor_change`/`partner_change`, T02 §6.3/§6.4): yazılı onayla; ortak sayısı sabit kalır.
    - **Son 3 ay kilidi** (`monitoring.last_3_months_lock`, T02 §6.5): bitişe <3 ay kaldıysa ortak/danışman değişikliği kabul edilmez.
    - **Gecikme yaptırımı** (`monitoring.final_report_delay`, T02 §6.12/§6.13): rapor süresinde yüklenmez veya revizesi kabul edilmezse proje kusura göre yürürlükten kaldırılır/iptal edilir — süre uyarısı bu nedenle önemlidir.
+   - **Çıktı bildirimi** (`acknowledgement.output_reporting`, T02 §6.6): projeden çıkan makale, bildiri, kitap bölümü vb. TÜBİTAK'a bildirilir ve BİDEB Başvuru ve İzleme Sistemi'ne yüklenir. Çıktılarda TÜBİTAK desteği belirtilir (`acknowledgement.rule`).
+   - **Sonraki imkânlar** (`opportunities`, T02 §7): proje tamamlanınca ekipteki öğrenciler 2224-A/B/D etkinlik desteklerine başvuruda imkân kazanır. Rapor bitince ekibe hatırlatılır.
 5. **DOCX üretimi ve denetim.** docx-engineering ile şablon doldurulur (`fill_cover`, `fill_general_info` anahtarları: `subject/lead/advisor/dates`, `SectionWriter.at_section` anahtarları: `intro/work/result/outputs/expenses`). Hiçbir şablon etiketi silinmez/yeniden sıralanmaz. Üretim sonrası somut denetim komutları (sonuç raporu tam belge olduğundan **bayraksız**):
    ```bash
    uv run python tools/check_report.py report/drafts/final-report.docx
@@ -53,7 +55,8 @@ Yalnız proje desteklendikten ve dönem çalışmaları yapıldıktan sonra. Ba�
 ## Kalite kontrol
 - [ ] Her başvuru hedefi/çalışma takvimi adımı sonuçla eşlendi; yapılamayanlar gerekçeli.
 - [ ] Hiçbir sentetik/planlanan değer sonuç gibi yazılmadı; sınırlılıklar korundu.
-- [ ] Harcama rules `budget` ile tutarlı, üst sınır aşılmadı; demirbaş varsa envanter kayıt belgesi eklendi/hatırlatıldı (rules `monitoring.demirbas_envanter`).
+- [ ] Harcama rules `budget` ile tutarlı, üst sınır aşılmadı; demirbaş varsa envanter kayıt belgesi eklendi/hatırlatıldı (rules `monitoring.inventory_record`).
 - [ ] İzleme kuralları kontrol edildi: fatura adı/isimsiz fiş, danışman/ortak değişikliği + sayı sabitliği, son 3 ay kilidi, gecikme yaptırımı (rules `monitoring`).
+- [ ] Çıktılar TÜBİTAK'a bildirildi ve BİDEB sistemine yüklendi; çıktılarda destek belirtildi (rules `acknowledgement`).
 - [ ] Şablon etiketleri korundu (docx-engineering + report-consistency temiz).
 - [ ] ÜYZ beyanı ve danışman onayı adımı kullanıcıya hatırlatıldı; süresinde yükleme tarihi rules'tan doğrulandı.

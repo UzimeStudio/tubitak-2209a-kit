@@ -20,7 +20,7 @@ TÜBİTAK 2209-A Üniversite Öğrencileri Araştırma Projeleri başvurusu içi
 Kurulum ayrıntıları: [SETUP.md](SETUP.md).
 
 ```bash
-git clone <bu-repo> my-2209a && cd my-2209a
+git clone https://github.com/UzimeStudio/tubitak-2209a-kit.git my-2209a && cd my-2209a
 uv sync
 uv run python tools/init_project.py     # project.json'u sorularla kurar
 uv run python tools/status.py           # durum ve sıradaki adım

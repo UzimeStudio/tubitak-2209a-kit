@@ -30,6 +30,7 @@ ifade edilmiştir.
 | --- | --- | --- | --- |
 | **Resmî:** Konuyu ve özgün yönü yansıtan, kurum/firma/ürün/marka öne çıkarmayan başlık. | Modaya uygun ama konuyla ilgisiz etiket ("yapay zekâ", "nano") eklemek; başlık ile içeriğin uyuşmaması. | "Yeni Nesil Akıllı Sistem" → "X Yönteminin Y Koşulunda Ölçüm Güvenilirliğinin Değerlendirilmesi" | T08/T09, T02 (marka yasağı) |
 | **Öneri:** Başlık okunduğunda ne, nerede, neye göre ölçüldüğü sezilmeli. | Aşırı uzun, iç içe tamlamalı başlık. | "… ve Bununla İlişkili Tüm Etkenlerin Kapsamlı İncelenmesi" → "… İki Grup Arasındaki Farkın İncelenmesi" | genel rehber (NSF, Horizon) |
+| **Öneri:** Başlıkta kısaltma ve alan jargonu olmamalı; hakem başlığı ilk okuyuşta çözebilmeli. | Yalnız ekibin bildiği kısaltma ("XYZ-Net ile …"). | "ABC-Ölçer ile DKS Tespiti" → "Düşük Maliyetli Sensörle Toprak Nemi Ölçümünün Doğruluğu" | genel rehber (NSF) |
 
 ---
 
@@ -38,7 +39,7 @@ ifade edilmiştir.
 | Hakemin aradığı | Sık hata | Zayıf → güçlü (kurgusal) | Kaynak |
 | --- | --- | --- | --- |
 | **Resmî:** Önem, amaç, yöntem, beklenen sonuç ve etkiyi tek akışta eksiksiz veren özet; dört ekseni (bilimsel nitelik, yöntem, proje yönetimi, yaygın etki) kapsar. | Sonuç varmış gibi yazmak; dört eksenden birini atlamak; sınır dışı uzunluk. | "Bu çok önemli ve yenilikçi bir projedir." → "Bu proje, X yönteminin Y koşulundaki güvenilirliğini nicel olarak sınayarak literatürdeki Z boşluğunu kapatmayı amaçlar." | T03, T08/T09 |
-| **Öneri:** İngilizce özet, Türkçe özetin birebir ve dilbilgisel karşılığı olmalı. | "Çeviri kokan", Türkçeden sapan İngilizce özet. | Makine çevirisi cümle → ekip tarafından yeniden kurulmuş akıcı cümle | genel rehber (Horizon, Innovate UK) |
+| **Öneri:** İngilizce özet, Türkçe özetin birebir ve dilbilgisel karşılığı olmalı. Sayılar, eşikler ve yöntem adları iki dilde aynı olmalı; cümle cümle karşılaştırın. | "Çeviri kokan", Türkçeden sapan İngilizce özet; Türkçede "%90", İngilizcede "85%". | Makine çevirisi cümle → ekip tarafından yeniden kurulmuş akıcı cümle | genel rehber (Horizon, Innovate UK) |
 | **Öneri:** Anahtar kelimeler konuyu tarayıcıda bulunur kılmalı. | Çok genel ("araştırma", "analiz") sözcükler. | "bilim, teknoloji, veri" → "ölçek geçerliği, iç tutarlılık, Y koşulu" | genel rehber |
 
 ---
@@ -79,6 +80,8 @@ ifade edilmiştir.
 | **Resmî:** Gerçekçi iş paketleri; her işin ne ölçüde yapılırsa başarılı sayılacağını belirten **başarı ölçütü** ve bu ölçütlerin katkı payı/ağırlığı; süre üst sınırını aşmayan çizelge. | Başarı ölçütünün tanımlanmaması; katkı toplamının hedeflenen değere ulaşmaması; gerçekçi olmayan takvim. | "Proje zamanında ve başarıyla tamamlanacaktır." → "İP2 başarı ölçütü: hedef doğruluğun ≥[eşik] olması (katkı %[ağırlık])." | T03, T08/T09 |
 | **Resmî:** Literatür tarama, rapor yazımı, sonuç paylaşımı ve malzeme alımı tek başına iş paketi olamaz. | Bu adımların ayrı iş paketi yapılması. | İP: "Literatür taraması" → yöntem adımlarının içine gömülü, çıktısı somut iş paketleri | T03 (rules `work_plan.forbidden_steps`) |
 | **Öneri:** Her iş paketinde sorumlu kişi(ler) belli, bir kişi çakışan işlerde değil. | Sorumsuz iş paketi; bir kişiye çakışan yük. | "Ekip yapar." → "İP2'den [ad] sorumludur; eş zamanlı İP3 [ad]'e verilmiştir." | genel rehber |
+| **Öneri:** Her iş paketi elle tutulur bir ara çıktıyla bitmeli (veri seti, çalışan modül, analiz tablosu); başarı ölçütü bu çıktıya bağlanmalı. Hangi iş paketinin hangisinin çıktısını beklediği yazılmalı. | İş paketi "devam eden çalışma" gibi biter; bağımlılık görünmez, gecikme zinciri fark edilmez. | "İP2: Veri toplama (2-5. ay)." → "İP2 (2-5. ay) çıktısı: temizlenmiş [n] kayıtlık veri seti. İP3 bu veri setine bağlıdır." | genel rehber (1002-A form yapısı) |
+| **Öneri:** Takvimi ay ay gösteren basit bir çubuk çizelge (Gantt) ekleyin; çakışan işler ve toplam süre tek bakışta görünür. | Takvimin yalnız düz metinle anlatılması. | Paragrafla anlatılan takvim → iş paketi × ay tablosu ya da `tools/figstyle.py` stiliyle çizilmiş çizelge | genel rehber |
 
 ---
 
@@ -106,6 +109,7 @@ ifade edilmiştir.
 | --- | --- | --- | --- |
 | **Resmî:** Öngörülen çıktıların kategorilere ayrılarak (bilimsel/akademik, ekonomik/ticari/sosyal, yeni proje), ölçülebilir ve gerçekçi hedeflere dayandırılarak verilmesi. | Etkinin açıkça ifade edilmemesi; sona iliştirilen bir paragrafa sıkıştırılması; yayın kabulünün garanti edilmesi. | "Proje topluma ve bilime katkı sağlayacaktır." → "Çıktılar, X alanındaki ölçüm maliyetini düşürebilir; veri seti açık erişime açılacaktır." | T03, T08/T09 |
 | **Öneri:** Sonuçtan kimin nasıl yararlanacağının somut yazılması. | Soyut "fayda" iddiası. | "Faydalı olacaktır." → "[paydaş], çıktıyı [somut kullanım] için kullanabilir." | genel rehber (NSF broader impacts) |
+| **Öneri:** Etkiyi zamana göre ayırın: proje süresince, proje bitince (kısa vade) ve sonrasında (uzun vade). Her birine ölçülebilir bir gösterge bağlayın. | Bütün etkilerin tek, zamansız bir listede durması. | "Yayın ve yeni proje beklenmektedir." → "Süresince: açık veri seti. Bitince: 1 ulusal bildiri başvurusu. Sonra: sonuçlara dayanan yeni proje önerisi." | genel rehber (NSF broader impacts) |
 
 ---
 
@@ -116,6 +120,7 @@ ifade edilmiştir.
 | **Resmî:** Her kalemin proje faaliyetiyle (iş paketiyle) ilişkilendirilmesi ve gerekçelendirilmesi; üst sınırın aşılmaması; yalnız izinli kalemlerin kullanılması. | Gerekçesiz kalem; kalemin hangi iş paketi için gerektiğinin yazılmaması; üst sınırı aşma. | "Sarf malzemesi: [tutar]." → "İP2'deki [sayı] ölçüm için X kiti gereklidir (birim fiyat [tutar], KDV dahil)." | T03, T08/T09 |
 | **Öneri:** Fiyatların KDV dahil ve kur değişimini hesaba katan, proforma/teklife dayanan değerler olması. | Yuvarlak dolgu tutar, teklifsiz rakam. | "Yaklaşık [tutar]." → "Proforma Ek-2'ye göre [tutar] (KDV dahil)." | genel rehber + T08/T09 |
 | **Öneri:** Öğrenci bursu/maaşı (PTİ) talebi izlenimi vermemek. | Bütçe dışı kalemi dolaylı istemek. | "Öğrenciye ödeme." → (yalnız izinli kalemler; burs/maaş yazılmaz) | T02 (bütçe dışı), T08/T09 |
+| **Öneri:** Üst sınıra dayanmayın; kur ve fiyat artışı için küçük bir pay bırakın. Teklifin tarihini ve geçerlilik süresini not edin. | Bütçenin üst sınıra kuruşu kuruşuna eşit kurulması; bir fiyat artışında kalem kesmek zorunda kalmak. | "Toplam: [üst sınır] TL." → "Toplam: [üst sınırın biraz altı] TL; teklif tarihi [gün], geçerlilik 30 gün." | genel rehber (Horizon) |
 
 ---
 
@@ -124,6 +129,7 @@ ifade edilmiştir.
 | Hakemin aradığı | Sık hata | Zayıf → güçlü (kurgusal) | Kaynak |
 | --- | --- | --- | --- |
 | **Resmî:** Güncel, metinde atıfla ilişkilendirilmiş kaynaklar; projede anılan her çalışmanın listede yer alması ve listenin yalnız atıf verilenleri içermesi; DOI'li kaynakta DOI. | Eski kaynaklar; metinle bağ kurulmayan ham liste; eksik/fazla künye. | Peş peşe özetlenen, projeyle bağ kurulmayan liste → "Smith (2023) A'yı gösterdi; B koşulu test edilmedi — bu, projemizin çıkış noktasıdır." | T03, T06, T08/T09 |
+| **Resmî:** ÜYZ uydurma kaynak üretebilir; her künye doğrulanmadan kullanılamaz. **Öneri:** Son metin düzenlemesinden sonra atıf-kaynakça eşlemesini bir kez daha çalıştırın; düzenleme sırasında atıf düşer ya da eklenir. | Kaynakçanın yalnız ilk taslakta denetlenmesi. | Son gün eklenen paragraftaki atıf listede yok → `tools/check_application.py` ve `tools/verify_source.py` son kez çalıştırıldı | T05 (rules `ethics.fake_references`), T06 |
 
 ---
 
@@ -175,7 +181,23 @@ veri analizi). Her türün kendi asgari denetimi vardır.
   (T08/T09)
 - **Çifte fonlama:** Konunun başka bir kaynaktan (üniversite/AB vb.) fonlanmak
   için yazılmadığından ve literatüre gerçekten katkı yapacağından emin olun.
-  (T08/T09; rules `eligibility.no_prior_support`)
+  Bitirme projesi ya da BAP projesiyle aynı işse bunu baştan danışmanla
+  konuşun. (T08/T09; rules `eligibility.no_prior_support`, `eligibility.single_application`)
+- **Yeşil ekonomi finansmanı:** Proje çevre dostu, sürdürülebilir ya da iklim
+  nötr bir teknolojik çözüme odaklanıyor ve yürütücü kadın ya da uluslararası
+  öğrenciyse, TÜBİTAK-UNIDO iş birliğiyle finanse edilebilir. (Resmî — rules
+  `evaluation.green_economy_financing`, T02 §5.2.5)
+
+---
+
+## Başvuru süreci ve son kontrol
+
+| Hakemin / sistemin aradığı | Sık hata | Ne yapılmalı | Kaynak |
+| --- | --- | --- | --- |
+| **Resmî:** Başvuru ve akademik danışman onayı aynı kapanış saatine kadar tamamlanır; tamamlanmayan başvuru ön incelemede elenir. | Öğrenci onayını son gün vermek; danışmana onay için zaman kalmaması. | Kendi iç son gününüzü resmî tarihten birkaç iş günü önceye koyun. Tarihler rules `timeline`'da. | T02 §4.3.1, rules `pre_screening` |
+| **Resmî:** Biçime uymayan ya da en az karakter sayısını tutmayan başvuru elenir. | Bir zorunlu alanın boş ya da çok kısa kalması. | Onaydan önce `tools/check_application.py --tybs` çalıştırın; her alanın dolu olduğunu görün. | T02 §5.1.2, rules `section_min_chars` |
+| **Resmî:** Metin "Proje Önerisini Önizle" ile kontrol edilip öyle onaylanır. | Başka yerden yapıştırılan metinde tablo kayması, bozuk özel karakter. | Önizlemeyi baştan sona okuyun; tablo ve şekilleri tek tek kontrol edin. | T03, rules `tybs_input` |
+| **Öneri:** Metni konuya yabancı birine okutun. | Ekip içinde anlaşılan ama hakeme kapalı anlatım. | Başka bölümden bir arkadaş özgün değeri ve yöntemi bir cümleyle anlatabiliyorsa metin hazırdır. | genel rehber (Innovate UK) |
 
 ---
 
@@ -236,3 +258,4 @@ Genel rehber (resmî değil — çapraz doğrulama için):
 - [NSF Merit Review genel bakış](http://www.nsf.gov/bfa/dias/policy/merit_review/overview.pdf)
 - [Horizon Europe'da sık proje hataları](https://moose-pelican-xee8.squarespace.com/blog/common-mistakes-in-horizon-europe-proposals)
 - [Innovate UK — değerlendiriciden sık hatalar](https://iuk-business-connect.org.uk/wp-content/uploads/2025/02/Evalutors-tips-feb-12th-2025-with-text-boxes.pdf)
+- [TÜBİTAK 1002-A başvuru formu yapısı (topluluk şablonu)](https://tr.overleaf.com/latex/templates/tubitak-1002-a-basvuru-formu/zdkqbvmbdfrj)
